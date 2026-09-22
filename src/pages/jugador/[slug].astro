@@ -70,7 +70,7 @@ const prMasAlto = ficha.simulacion.length ? Math.max(...ficha.simulacion.map((s)
         <h2>Resultados en los torneos recolectados</h2>
         <table class="tabla-mini">
           <thead>
-            <tr><th>Torneo</th><th class="num">Puesto</th><th class="num">Lobby</th><th>Tipo</th><th class="num">Peso</th><th>Cuenta</th></tr>
+            <tr><th>Torneo</th><th class="num">Puesto</th><th class="num">Lobby</th><th class="num">Elims (prom.)</th><th>Tipo</th><th class="num">Peso</th><th>Cuenta</th></tr>
           </thead>
           <tbody>
             {ficha.torneos.map((t) => (
@@ -78,6 +78,7 @@ const prMasAlto = ficha.simulacion.length ? Math.max(...ficha.simulacion.map((s)
                 <td>{t.serie.replace(/^S\d+_/, '').replace(/_/g, ' ')} <span class="chip">{t.region}</span><br /><span class="meta">{t.titulo}</span></td>
                 <td class="num">#{n(t.puesto)}</td>
                 <td class="num">{n(t.lobby)}</td>
+                <td class="num">{t.avgElims !== null && t.avgElims !== undefined ? t.avgElims.toFixed(2).replace('.', ',') : '—'}</td>
                 <td>{t.tipo ?? '—'}</td>
                 <td class="num">{t.peso ? `×${t.peso.toFixed(1).replace('.', ',')}` : '—'}</td>
                 <td>{t.cuenta ? 'sí' : 'no'}</td>

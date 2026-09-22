@@ -27,11 +27,13 @@ export interface Ronda {
   jugadores: number;
   paginas: number | null;
   conElims: number;
+  /** Cuantas filas traen el PROMEDIO de eliminaciones por partida (Fortnite Tracker). */
+  conPromedioElims: number;
   legacy: string | null;
 }
 
-/** [puesto, jugador, puntos, partidas, victorias, elims, premio] */
-export type Fila = [number, string, number | null, number | null, number | null, number | null, string];
+/** [puesto, jugador, puntos, partidas, victorias, elims totales, elims promedio, premio] */
+export type Fila = [number, string, number | null, number | null, number | null, number | null, number | null, string];
 
 const POR_RONDA = import.meta.glob<{ filas: Fila[] }>('../data/rondas/*.json', { eager: true, import: 'default' });
 
@@ -68,6 +70,7 @@ export interface Ficha {
     tipo: string | null;
     peso: number | null;
     cuenta: boolean;
+    avgElims: number | null;
     fecha: string | null;
   }>;
   otrasRondas: Array<Record<string, unknown>>;
@@ -96,6 +99,9 @@ export function filasDe(archivo: string): Fila[] {
 }
 
 export const n = (x: number | null | undefined) => (x === null || x === undefined ? '—' : x.toLocaleString('es-CL'));
+/** Un decimal con coma (para promedios: 7,33). */
+export const dec = (x: number | null | undefined) =>
+  x === null || x === undefined ? '—' : x.toFixed(2).replace('.', ',');
 /** Nombres que la separacion automatica deja feos ("Arena Perf Eval" -> "Performance Evaluation"). */
 const NOMBRES: Record<string, string> = {
   ArenaPerfEval: 'Performance Evaluation',

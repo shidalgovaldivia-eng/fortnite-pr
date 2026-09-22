@@ -133,7 +133,8 @@ async function main() {
     const standings = datos.standings ?? [];
     const ident = `${region}-${serie}-${rondaId}`;
     const nombreArchivo = `${slug(ident)}.json`;
-    const filas = standings.map((s) => [s.rank, normalizar(s.player), s.points, s.matches, s.wins, s.eliminations ?? null, s.cashPrize ?? '']);
+    const filas = standings.map((s) => [s.rank, normalizar(s.player), s.points, s.matches, s.wins,
+      s.eliminations ?? null, s.avgElims ?? null, s.cashPrize ?? '']);
 
     await writeFile(
       path.join(DESTINO, 'rondas', nombreArchivo),
@@ -153,6 +154,9 @@ async function main() {
       jugadores: datos.playerCount ?? filas.length,
       paginas: datos.pagesFetched ?? null,
       conElims: standings.filter((s) => s.eliminations !== null && s.eliminations !== undefined).length,
+      // Fortnite Tracker no publica el TOTAL de eliminaciones, pero SI el promedio por partida: sin
+      // este campo la columna quedaba vacia en 84 de 85 rondas teniendo el dato disponible.
+      conPromedioElims: standings.filter((s) => s.avgElims !== null && s.avgElims !== undefined).length,
     });
   }
   indice.sort((a, b) => (b.fecha ?? '').localeCompare(a.fecha ?? '') || a.serie.localeCompare(b.serie));

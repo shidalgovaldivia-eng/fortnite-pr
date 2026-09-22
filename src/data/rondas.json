@@ -12,7 +12,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1942,
   "paginas": 20,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1942
  },
  {
   "slug": "naw-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-naw",
@@ -27,7 +28,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 3348,
   "paginas": 34,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 3348
  },
  {
   "slug": "naw-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-naw",
@@ -42,7 +44,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1678,
   "paginas": 17,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1678
  },
  {
   "slug": "br-s42-solovictorycup-s42-solovictorycup-event3round2-br",
@@ -57,7 +60,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 785,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 785
  },
  {
   "slug": "nac-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-nac",
@@ -72,7 +76,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 10000,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 10000
  },
  {
   "slug": "nac-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-nac",
@@ -87,7 +92,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 4065,
   "paginas": 41,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 4065
  },
  {
   "slug": "br-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-br",
@@ -102,7 +108,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 2486,
   "paginas": 25,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 2486
  },
  {
   "slug": "br-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-br",
@@ -117,7 +124,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 901,
   "paginas": 10,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 901
  },
  {
   "slug": "eu-s42-solovictorycup-s42-solovictorycup-event3round2-eu",
@@ -132,7 +140,8 @@
   "fuente": "fortnite-competitive",
   "jugadores": 3936,
   "paginas": 40,
-  "conElims": 3936
+  "conElims": 3936,
+  "conPromedioElims": 0
  },
  {
   "slug": "me-s42-solovictorycup-s42-solovictorycup-event3round2-me",
@@ -147,7 +156,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 726,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 726
  },
  {
   "slug": "eu-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-eu",
@@ -162,7 +172,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 10000,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 10000
  },
  {
   "slug": "eu-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-eu",
@@ -177,7 +188,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 8106,
   "paginas": 82,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 8106
  },
  {
   "slug": "me-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-me",
@@ -192,7 +204,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 2756,
   "paginas": 28,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 2756
  },
  {
   "slug": "me-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-me",
@@ -207,7 +220,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1404,
   "paginas": 15,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1404
  },
  {
   "slug": "asia-s42-solovictorycup-s42-solovictorycup-event3round2-asia",
@@ -222,7 +236,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 786,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 786
  },
  {
   "slug": "oce-s42-solovictorycup-s42-solovictorycup-event3round2-oce",
@@ -237,7 +252,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 768,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 768
  },
  {
   "slug": "asia-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-asia",
@@ -252,7 +268,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 2621,
   "paginas": 27,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 2621
  },
  {
   "slug": "asia-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-asia",
@@ -267,7 +284,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 691,
   "paginas": 7,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 691
  },
  {
   "slug": "oce-s42-rankedcupreloadduos-s42-rankedcupreloadduos-event4-oce",
@@ -282,7 +300,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1927,
   "paginas": 20,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1927
  },
  {
   "slug": "oce-s42-rankedcupreloadduos-zb-s42-rankedcupreloadduos-zb-event4-oce",
@@ -297,7 +316,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 634,
   "paginas": 7,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 634
  },
  {
   "slug": "naw-s42-rankedcupduos-s42-rankedcupduos-event4-naw",
@@ -312,7 +332,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 754,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 754
  },
  {
   "slug": "naw-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-naw",
@@ -327,7 +348,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 583,
   "paginas": 6,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 583
  },
  {
   "slug": "nac-s42-rankedcupduos-s42-rankedcupduos-event4-nac",
@@ -342,7 +364,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1803,
   "paginas": 19,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1803
  },
  {
   "slug": "nac-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-nac",
@@ -357,7 +380,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1014,
   "paginas": 11,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1014
  },
  {
   "slug": "br-s42-rankedcupduos-s42-rankedcupduos-event4-br",
@@ -372,7 +396,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 629,
   "paginas": 7,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 629
  },
  {
   "slug": "br-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-br",
@@ -387,7 +412,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 297,
   "paginas": 3,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 297
  },
  {
   "slug": "eu-s42-rankedcupduos-s42-rankedcupduos-event4-eu",
@@ -402,7 +428,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1898,
   "paginas": 19,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1898
  },
  {
   "slug": "eu-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-eu",
@@ -417,7 +444,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 800,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 800
  },
  {
   "slug": "me-s42-rankedcupduos-s42-rankedcupduos-event4-me",
@@ -432,7 +460,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 339,
   "paginas": 4,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 339
  },
  {
   "slug": "me-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-me",
@@ -447,7 +476,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 201,
   "paginas": 3,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 201
  },
  {
   "slug": "asia-s42-rankedcupduos-s42-rankedcupduos-event4-asia",
@@ -462,7 +492,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 543,
   "paginas": 6,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 543
  },
  {
   "slug": "asia-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-asia",
@@ -477,7 +508,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 205,
   "paginas": 3,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 205
  },
  {
   "slug": "oce-s42-rankedcupduos-s42-rankedcupduos-event4-oce",
@@ -492,7 +524,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 304,
   "paginas": 4,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 304
  },
  {
   "slug": "oce-s42-rankedcupduos-zb-s42-rankedcupduos-zb-event4-oce",
@@ -507,7 +540,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 217,
   "paginas": 3,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 217
  },
  {
   "slug": "naw-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-naw",
@@ -522,7 +556,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 909,
   "paginas": 10,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 909
  },
  {
   "slug": "nac-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-nac",
@@ -537,7 +572,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1773,
   "paginas": 18,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1773
  },
  {
   "slug": "naw-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-round",
@@ -552,7 +588,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 79,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 79
  },
  {
   "slug": "naw-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-naw",
@@ -567,7 +604,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 3953,
   "paginas": 40,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 3953
  },
  {
   "slug": "naw-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-naw",
@@ -582,7 +620,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1946,
   "paginas": 20,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1946
  },
  {
   "slug": "br-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-br",
@@ -597,7 +636,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 915,
   "paginas": 10,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 915
  },
  {
   "slug": "nac-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-round",
@@ -612,7 +652,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 140,
   "paginas": 2,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 140
  },
  {
   "slug": "nac-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-nac",
@@ -627,7 +668,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 6233,
   "paginas": 63,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 6233
  },
  {
   "slug": "nac-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-nac",
@@ -642,7 +684,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 2517,
   "paginas": 26,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 2517
  },
  {
   "slug": "br-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-round2",
@@ -657,7 +700,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 77,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 77
  },
  {
   "slug": "naw-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-we",
@@ -672,7 +716,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 50,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 50
  },
  {
   "slug": "br-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-br",
@@ -687,7 +732,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1552,
   "paginas": 16,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1552
  },
  {
   "slug": "br-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-br",
@@ -702,7 +748,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 760,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 760
  },
  {
   "slug": "eu-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-eu",
@@ -717,7 +764,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1960,
   "paginas": 20,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1960
  },
  {
   "slug": "nac-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-we",
@@ -732,7 +780,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 50,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 50
  },
  {
   "slug": "me-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-me",
@@ -747,7 +796,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 898,
   "paginas": 9,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 898
  },
  {
   "slug": "eu-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-round2",
@@ -762,7 +812,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 174,
   "paginas": 2,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 174
  },
  {
   "slug": "br-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-wee",
@@ -777,7 +828,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 50,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 50
  },
  {
   "slug": "eu-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-eu",
@@ -792,7 +844,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 10000,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 10000
  },
  {
   "slug": "eu-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-eu",
@@ -807,7 +860,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 6769,
   "paginas": 68,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 6769
  },
  {
   "slug": "me-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-round2",
@@ -822,7 +876,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 78,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 78
  },
  {
   "slug": "me-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-me",
@@ -837,7 +892,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 2622,
   "paginas": 27,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 2622
  },
  {
   "slug": "me-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-me",
@@ -852,7 +908,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1337,
   "paginas": 14,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1337
  },
  {
   "slug": "eu-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-wee",
@@ -867,7 +924,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 50,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 50
  },
  {
   "slug": "asia-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-asia",
@@ -882,7 +940,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 974,
   "paginas": 10,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 974
  },
  {
   "slug": "oce-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event4round2-oce",
@@ -897,7 +956,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 931,
   "paginas": 10,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 931
  },
  {
   "slug": "me-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-wee",
@@ -912,7 +972,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 49,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 49
  },
  {
   "slug": "asia-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-roun",
@@ -927,7 +988,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 79,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 79
  },
  {
   "slug": "oce-s42-mobilevictorycup-reloadminiv-s42-mobilevictorycup-event1-round",
@@ -942,7 +1004,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 80,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 80
  },
  {
   "slug": "asia-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-asia",
@@ -957,7 +1020,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 2081,
   "paginas": 21,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 2081
  },
  {
   "slug": "asia-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-asia",
@@ -972,7 +1036,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 840,
   "paginas": 9,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 840
  },
  {
   "slug": "oce-s42-rankedcupsoloreload-s42-rankedcupsoloreload-event4-oce",
@@ -987,7 +1052,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1250,
   "paginas": 13,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1250
  },
  {
   "slug": "oce-s42-rankedcupsoloreload-zb-s42-rankedcupsoloreload-zb-event4-oce",
@@ -1002,7 +1068,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 571,
   "paginas": 6,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 571
  },
  {
   "slug": "asia-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-w",
@@ -1017,7 +1084,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 50,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 50
  },
  {
   "slug": "oce-s42-fncsdivisionalcup-division1-s42-fncsdivisionalcup-division1-we",
@@ -1032,7 +1100,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 50,
   "paginas": 1,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 50
  },
  {
   "slug": "nac-s42-performanceevaluation-s42-performanceevaluation-event4round1-n",
@@ -1047,7 +1116,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1226,
   "paginas": 13,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1226
  },
  {
   "slug": "eu-s42-performanceevaluation-s42-performanceevaluation-event4round1-eu",
@@ -1062,7 +1132,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 1492,
   "paginas": 15,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 1492
  },
  {
   "slug": "naw-s42-solovictorycup-s42-solovictorycup-event2round2-naw",
@@ -1077,7 +1148,24 @@
   "fuente": "fortnite-tracker",
   "jugadores": 772,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 772
+ },
+ {
+  "slug": "nac-s42-solovictorycup-s42-solovictorycup-event2round2-nac",
+  "archivo": "nac-s42-solovictorycup-s42-solovictorycup-event2round2-nac.json",
+  "serie": "S42_SoloVictoryCup",
+  "region": "NAC",
+  "ronda": "S42_SoloVictoryCup_Event2Round2_NAC",
+  "etiqueta": "Event 2 Round 2 9/13/2026 11:00 PM - 12:00 AM",
+  "titulo": "Event 2 Round 2 9/13/2026 11:00 PM - 12:00 AM",
+  "fecha": "2026-09-13T23:00:00.000Z",
+  "etiquetaFecha": "2026-09-13",
+  "fuente": "fortnite-tracker",
+  "jugadores": 1932,
+  "paginas": 20,
+  "conElims": 0,
+  "conPromedioElims": 1932
  },
  {
   "slug": "br-s42-solovictorycup-s42-solovictorycup-event2round2-br",
@@ -1092,7 +1180,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 786,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 786
  },
  {
   "slug": "nac-s42-solovictorycup-s42-solovictorycup-event2round1-nac",
@@ -1107,7 +1196,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 10000,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 10000
  },
  {
   "slug": "br-s42-solovictorycup-s42-solovictorycup-event2round1-br",
@@ -1122,7 +1212,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 10000,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 10000
  },
  {
   "slug": "eu-s42-solovictorycup-s42-solovictorycup-event2round2-eu",
@@ -1137,7 +1228,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 3924,
   "paginas": 40,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 3924
  },
  {
   "slug": "me-s42-solovictorycup-s42-solovictorycup-event2round2-me",
@@ -1152,7 +1244,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 731,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 731
  },
  {
   "slug": "eu-s42-solovictorycup-s42-solovictorycup-event2round1-eu",
@@ -1167,7 +1260,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 9999,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 9999
  },
  {
   "slug": "me-s42-solovictorycup-s42-solovictorycup-event2round1-me",
@@ -1182,7 +1276,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 9999,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 9999
  },
  {
   "slug": "asia-s42-solovictorycup-s42-solovictorycup-event2round2-asia",
@@ -1197,7 +1292,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 774,
   "paginas": 8,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 774
  },
  {
   "slug": "asia-s42-solovictorycup-s42-solovictorycup-event2round1-asia",
@@ -1212,7 +1308,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 9999,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 9999
  },
  {
   "slug": "naw-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round2-naw",
@@ -1227,7 +1324,8 @@
   "fuente": "fortnite-tracker",
   "jugadores": 911,
   "paginas": 10,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 911
  },
  {
   "slug": "eu-s42-solovictorycup-s42-solovictorycup-event3round1-eu",
@@ -1242,6 +1340,7 @@
   "fuente": "fortnite-tracker",
   "jugadores": 10000,
   "paginas": 100,
-  "conElims": 0
+  "conElims": 0,
+  "conPromedioElims": 10000
  }
 ]
