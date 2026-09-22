@@ -1,0 +1,125 @@
+---
+/**
+ * Ranking de los jugadores con ficha, ordenado por el PR estimado.
+ *
+ * Aviso honesto en la pagina: esto NO es el ranking global de Epic (para eso hace falta la tabla
+ * oficial completa). Es el orden de los jugadores que tienen ficha entre los recolectados.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import { fichas, ranking, n } from '../../lib/datos';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const minimo = (fichas as { minimoRondas?: number }).minimoRondas ?? 2;
+---
+
+<BaseLayout title="Jugadores · ranking estimado · ALTURA" description={`${ranking.length} fichas de jugador con PR estimado, decay y simulación.`}>
+  <div class="page-shell">
+    <Header />
+
+    <main>
+      <nav class="migas" aria-label="Ruta">
+        <a href={base}>Inicio</a>
+        <i class="ph ph-caret-right"></i>
+        <span>Jugadores</span>
+      </nav>
+
+      <section class="cabecera">
+        <span class="eyebrow">Clasificación estimada</span>
+        <h1>Jugadores con ficha</h1>
+        <p class="etiqueta">
+          {n(ranking.length)} jugadores de los torneos recolectados, ordenados por nuestro <b>PR estimado</b>.
+          Solo aparecen quienes tienen al menos {minimo} rondas cosechadas: con un solo resultado el PR no dice
+          nada. <b>No es el ranking global de Epic</b> — eso requiere su tabla completa.
+        </p>
+      </section>
+
+      <div class="controles">
+        <label class="buscador">
+          <i class="ph ph-magnifying-glass"></i>
+          <input id="q" type="search" placeholder="Buscar jugador por nombre…" autocomplete="off" />
+        </label>
+        <span class="contador" id="info"></span>
+      </div>
+
+      <div class="caja">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th class="num">#</th>
+              <th>Jugador</th>
+              <th class="num">PR estimado</th>
+              <th class="num">Torneos</th>
+              <th class="num">Mejor puesto</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo">
+            {ranking.map((f, i) => (
+              <tr data-busca={f.nombre.toLowerCase()}>
+                <td class="num">{i + 1}</td>
+                <td class="jugador"><a href={`${base}jugador/${f.slug}/`}>{f.nombre}</a></td>
+                <td class="num fuerte">{n(f.pr)}</td>
+                <td class="num">{f.resultadosContados}{f.faltanPara20 > 0 ? ` <span class="meta">(${f.resultadosContados}/{f.resultadosContados + f.faltanPara20})</span>` : ''}</td>
+                <td class="num">{f.mejorPuesto ? `#${n(f.mejorPuesto)}` : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="meta">
+        El PR se calcula con los pesos por torneo y el decay que publica Epic, más "los mejores 20" resultados.
+        El rating crudo y el ensamble son una estimación calibrada nuestra: los números son comparables entre sí
+        dentro de esta tabla, no contra la cifra oficial.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <b>ALTURA</b>
+      <span>Datos recolectados de Fortnite Tracker y del sitio oficial de Epic.</span>
+    </footer>
+  </div>
+
+  <script>
+    const filas = Array.from(document.querySelectorAll<HTMLTableRowElement>('#cuerpo tr'));
+    const q = document.getElementById('q') as HTMLInputElement;
+    const info = document.getElementById('info')!;
+    const num = (x: number) => x.toLocaleString('es-CL');
+    const parametro = new URLSearchParams(location.search).get('q');
+    if (parametro) q.value = parametro;
+
+    function aplicar() {
+      const texto = q.value.trim().toLowerCase();
+      let visibles = 0;
+      filas.forEach((f) => {
+        f.hidden = Boolean(texto) && !(f.dataset.busca ?? '').includes(texto);
+        if (!f.hidden) visibles += 1;
+      });
+      info.textContent = `${num(visibles)} de ${num(filas.length)} jugadores`;
+    }
+    q.addEventListener('input', aplicar);
+    aplicar();
+  </script>
+
+  <style is:global>
+    .migas { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; margin: 18px 0 6px; }
+    .migas a { color: var(--muted); text-decoration: none; }
+    .cabecera h1 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); margin: 6px 0 4px; }
+    .etiqueta { color: var(--muted); max-width: 74ch; font-size: 13.5px; }
+    .controles { display: flex; align-items: center; gap: 10px; margin: 14px 0; flex-wrap: wrap; }
+    .buscador { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; flex: 1 1 260px; }
+    .buscador input { background: none; border: none; outline: none; color: var(--text); font: inherit; width: 100%; }
+    .contador { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .caja { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+    .tabla { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+    .tabla th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); }
+    .tabla td { padding: 8px 10px; border-bottom: 1px solid #12203a; font-size: 14px; }
+    .tabla td.num, .tabla th.num { text-align: right; }
+    .tabla tbody tr:hover td { background: #0d1930; }
+    .jugador a { color: var(--text); text-decoration: none; border-bottom: 1px dotted #3b4d70; }
+    .jugador a:hover { color: var(--pink); border-color: var(--pink); }
+    .fuerte { font-weight: 600; color: #ffd76a; }
+    .meta { color: var(--muted); font-size: 12px; }
+    p.meta { max-width: 84ch; }
+  </style>
+</BaseLayout>

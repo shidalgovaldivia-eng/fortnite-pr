@@ -1,0 +1,10 @@
+---
+import { regions } from '../data';
+---
+<div class="region-bar" aria-label="Filtrar por región">
+  <span class="region-bar__label">Región</span>
+  <div class="region-list" role="group">
+    {regions.map((region) => <button class:list={['region-button', { 'is-active': region === 'BR' }]} type="button" data-region={region}>{region}</button>)}
+  </div>
+  <p>Más que estadísticas.<br />Historias competitivas.</p>
+</div>

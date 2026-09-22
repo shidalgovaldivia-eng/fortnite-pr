@@ -1,0 +1,17 @@
+---
+import type { Tournament } from '../data';
+const { tournament } = Astro.props as { tournament: Tournament };
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+<article class="tournament-card" data-region={tournament.region} data-name={tournament.name.toLowerCase()}>
+  <a href={`${base}torneos/${tournament.slug}/`} aria-label={`Abrir ${tournament.name}`}>
+    <img src={`${base}assets/${tournament.image}`} alt="" loading="lazy" />
+    <div class="tournament-card__shade"></div>
+    {tournament.status === 'En curso' && <span class="live-badge">En curso</span>}
+    <div class="tournament-card__body">
+      <h3>{tournament.shortName}</h3>
+      <p>{tournament.region} <span></span> {tournament.format}</p>
+      <time>{tournament.date}</time>
+    </div>
+  </a>
+</article>

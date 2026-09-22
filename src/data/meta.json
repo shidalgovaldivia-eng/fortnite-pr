@@ -1,0 +1,29 @@
+{
+ "generado": "2026-09-22T18:06:48.878Z",
+ "rondas": 83,
+ "jugadoresRegistrados": 191607,
+ "fichasDeJugador": 800,
+ "proximasSesiones": 40,
+ "series": [
+  "S42_ConsoleVCC_SolosZB",
+  "S42_FNCSDivisionalCup_Division1",
+  "S42_MobileVictoryCup_ReloadminiV",
+  "S42_PerformanceEvaluation",
+  "S42_RankedCupDuos",
+  "S42_RankedCupDuos_ZB",
+  "S42_RankedCupReloadDuos",
+  "S42_RankedCupReloadDuos_ZB",
+  "S42_RankedCupSoloReload",
+  "S42_RankedCupSoloReload_ZB",
+  "S42_SoloVictoryCup"
+ ],
+ "regiones": [
+  "ASIA",
+  "BR",
+  "EU",
+  "ME",
+  "NAC",
+  "NAW",
+  "OCE"
+ ]
+}

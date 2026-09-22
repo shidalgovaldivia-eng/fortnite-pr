@@ -1,0 +1,287 @@
+---
+/**
+ * Tabla de una ronda: la vista principal del producto.
+ *
+ * Una pagina por ronda cosechada, desde `src/data/rondas/<slug>.json` (datos reales del collector,
+ * sincronizados con `node scripts/sync-data.mjs`). El HTML sale con TODAS las filas renderizadas
+ * (funciona sin JavaScript) y el buscar/ordenar/paginar corre en el navegador sobre esas filas.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import {
+  rondas,
+  slugDeJugador,
+  filasDe,
+  n,
+  bonita,
+  fechaLarga,
+  type Ronda,
+} from '../../lib/datos';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+export function getStaticPaths() {
+  return rondas.map((ronda) => ({ params: { slug: ronda.slug }, props: { ronda } }));
+}
+
+const { ronda } = Astro.props as { ronda: Ronda };
+const filas = filasDe(ronda.archivo);
+
+const conElims = ronda.conElims > 0;
+const top3 = filas.slice(0, 3);
+const sinFicha = filas.filter((f) => !slugDeJugador(f[1])).length;
+const esOficial = ronda.fuente === 'fortnite-competitive';
+const serieBonita = bonita(ronda.serie);
+---
+
+<BaseLayout
+  title={`${serieBonita} · ${ronda.region} · ALTURA`}
+  description={`Tabla completa de ${serieBonita} en ${ronda.region}: ${n(ronda.jugadores)} jugadores con puntos, partidas, victorias${conElims ? ' y eliminaciones' : ''}.`}
+>
+  <div class="page-shell">
+    <Header />
+
+    <main>
+      <nav class="migas" aria-label="Ruta">
+        <a href={`${base}torneos/`}>Torneos</a>
+        <i class="ph ph-caret-right"></i>
+        <span>{serieBonita} · {ronda.region}</span>
+      </nav>
+
+      <section class="cabecera">
+        <span class="eyebrow">Tabla de la ronda</span>
+        <h1>{serieBonita} <span class="chip-region">{ronda.region}</span></h1>
+        <p class="etiqueta">{ronda.titulo}</p>
+        <div class="datos-meta">
+          <span><i class="ph ph-calendar-blank"></i>{fechaLarga(ronda.fecha)}</span>
+          <span><i class="ph ph-users"></i>{n(ronda.jugadores)} jugadores</span>
+          {ronda.paginas && <span><i class="ph ph-file-text"></i>{n(ronda.paginas)} páginas</span>}
+          <span><i class="ph ph-database"></i>{esOficial ? 'sitio oficial de Epic' : 'Fortnite Tracker'}</span>
+          <span class:list={['pill', conElims ? 'ok' : 'warn']}>
+            <i class={conElims ? 'ph ph-check-circle' : 'ph ph-warning-circle'}></i>
+            {conElims ? 'con eliminaciones totales' : 'sin columna de eliminaciones'}
+          </span>
+        </div>
+      </section>
+
+      {!conElims && (
+        <p class="aviso">
+          Esta fuente publica el <b>promedio</b> de eliminaciones, no el total, así que esa columna va vacía a
+          propósito: preferimos no inventar el dato. Cuando la ronda también existe en el sitio oficial, esa
+          versión sí trae el total.
+        </p>
+      )}
+
+      <section class="podio">
+        {top3.map((f) => (
+          <article class:list={['podio-card', f[0] === 1 ? 'oro' : f[0] === 2 ? 'plata' : 'bronce']}>
+            <span class="podio-puesto">#{f[0]}</span>
+            <div class="podio-jugador">
+              {slugDeJugador(f[1]) ? <a href={`${base}jugador/${slugDeJugador(f[1])}/`}>{f[1]}</a> : <span>{f[1]}</span>}
+            </div>
+            <div class="podio-numeros">
+              <b>{n(f[2])}</b>
+              <span>puntos</span>
+              <small>{n(f[3])} partidas · {n(f[4])} VR</small>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section class="caja-tabla">
+        <div class="controles">
+          <label class="buscador">
+            <i class="ph ph-magnifying-glass"></i>
+            <input id="q" type="search" placeholder="Buscar jugador en esta tabla…" autocomplete="off" />
+          </label>
+          <label class="selector">
+            <span>Mostrar</span>
+            <select id="porPagina">
+              <option value="50">50</option>
+              <option value="100" selected>100</option>
+              <option value="250">250</option>
+              <option value="1000">1.000</option>
+            </select>
+          </label>
+          <span class="contador" id="info"></span>
+        </div>
+
+        <div class="scroll">
+          <table class="tabla" id="tabla">
+            <thead>
+              <tr>
+                <th class="num orden" data-clave="rank" title="Ordenar por puesto">#</th>
+                <th class="orden" data-clave="jugador">Jugador</th>
+                <th class="num orden" data-clave="puntos">Puntos</th>
+                <th class="num orden" data-clave="partidas">PJ</th>
+                <th class="num orden" data-clave="victorias">VR</th>
+                <th class="num orden" data-clave="elims">Elims</th>
+                <th class="num orden" data-clave="premio">Premio</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpo">
+              {filas.map((f) => (
+                <tr class:list={[f[0] === 1 ? 'top1' : f[0] <= 3 ? 'top3' : '']}>
+                  <td class="num">{f[0]}</td>
+                  <td class="jugador">
+                    {slugDeJugador(f[1]) ? <a href={`${base}jugador/${slugDeJugador(f[1])}/`}>{f[1]}</a> : f[1]}
+                  </td>
+                  <td class="num destacado">{n(f[2])}</td>
+                  <td class="num">{n(f[3])}</td>
+                  <td class="num">{n(f[4])}</td>
+                  <td class="num">{conElims ? n(f[5]) : '—'}</td>
+                  <td class="num">{f[6] || '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pie-tabla">
+          <button id="antes" class="boton"><i class="ph ph-caret-left"></i> Antes</button>
+          <button id="despues" class="boton">Después <i class="ph ph-caret-right"></i></button>
+          <span class="meta">
+            {n(ronda.jugadores)} filas. El tope de 10.000 jugadores por ronda es de la fuente, no nuestro.
+            {sinFicha > 0 && ` ${n(sinFicha)} de estos jugadores todavía no tienen ficha propia (hace falta que aparezcan en 2 rondas o más).`}
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <b>ALTURA</b>
+      <span>Datos recolectados de Fortnite Tracker y del sitio oficial de Epic. Pesos de PR y decay según lo publicado por Epic.</span>
+    </footer>
+  </div>
+
+  <script>
+    const filas = Array.from(document.querySelectorAll<HTMLTableRowElement>('#cuerpo tr'));
+    const info = document.getElementById('info')!;
+    const q = document.getElementById('q') as HTMLInputElement;
+    const porPagina = document.getElementById('porPagina') as HTMLSelectElement;
+    const cuerpo = document.getElementById('cuerpo')!;
+    const num = (v: number) => v.toLocaleString('es-CL');
+    let visibles = filas.slice();
+    let pagina = 0;
+
+    // Los valores se leen de las CELDAS, no de atributos data-*: duplicar cada dato en atributos
+    // hacia pesar 5,4 MB la tabla de 10.000 filas. El indice de columna es fijo: 0..# 1..jugador
+    // 2..puntos 3..PJ 4..VR 5..elims 6..premio
+    const COLUMNA: Record<string, number> = { rank: 0, jugador: 1, puntos: 2, partidas: 3, victorias: 4, elims: 5, premio: 6 };
+    const numero = (t: string) => {
+      const v = Number(String(t).replace(/[^0-9-]/g, ''));
+      return Number.isFinite(v) ? v : -1;
+    };
+    const valor = (fila: HTMLTableRowElement, clave: string) => {
+      const celda = fila.cells[COLUMNA[clave]]?.textContent ?? '';
+      return clave === 'jugador' ? celda.trim().toLowerCase() : numero(celda);
+    };
+
+    function pintar() {
+      const tam = Number(porPagina.value);
+      const desde = pagina * tam;
+      const enVista = new Set(visibles.slice(desde, desde + tam));
+      filas.forEach((f) => { f.hidden = !enVista.has(f); });
+      const hasta = Math.min(desde + tam, visibles.length);
+      info.textContent = visibles.length === filas.length
+        ? `${num(filas.length)} jugadores · mostrando ${num(desde + 1)}-${num(hasta)}`
+        : `${num(visibles.length)} de ${num(filas.length)} · mostrando ${hasta ? num(desde + 1) : 0}-${num(hasta)}`;
+    }
+
+    function filtrar() {
+      const texto = q.value.trim().toLowerCase();
+      visibles = texto ? filas.filter((f) => String(valor(f, 'jugador')).includes(texto)) : filas.slice();
+      pagina = 0;
+      pintar();
+    }
+
+    // Ordenar NO renumera: la primera columna sigue mostrando el puesto real de la ronda, porque si
+    // la renumeraramos la tabla mentiria sobre el resultado.
+    let ordenActual = '';
+    let ascendente = true;
+    document.querySelectorAll<HTMLTableCellElement>('th.orden').forEach((th) => {
+      th.addEventListener('click', () => {
+        const clave = th.dataset.clave!;
+        ascendente = ordenActual === clave ? !ascendente : true;
+        ordenActual = clave;
+        const esTexto = clave === 'jugador';
+        visibles.sort((a, b) => {
+          const va = valor(a, clave);
+          const vb = valor(b, clave);
+          const cmp = esTexto ? String(va).localeCompare(String(vb), 'es') : Number(va) - Number(vb);
+          return ascendente ? cmp : -cmp;
+        });
+        visibles.forEach((f) => cuerpo.appendChild(f));
+        pagina = 0;
+        pintar();
+      });
+    });
+
+    q.addEventListener('input', filtrar);
+    porPagina.addEventListener('change', () => { pagina = 0; pintar(); });
+    document.getElementById('despues')!.addEventListener('click', () => {
+      if ((pagina + 1) * Number(porPagina.value) < visibles.length) { pagina += 1; pintar(); }
+    });
+    document.getElementById('antes')!.addEventListener('click', () => {
+      if (pagina > 0) { pagina -= 1; pintar(); }
+    });
+    pintar();
+  </script>
+
+  <!-- is:global a proposito: con estilos scoped, Astro marca CADA elemento con data-astro-cid y en
+       una tabla de 10.000 filas eso son ~1,5 MB de atributos de mas. Los nombres de clase de esta
+       pagina son propios, asi que no colisionan con el resto del sitio. -->
+  <style is:global>
+    .migas { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; margin: 18px 0 6px; }
+    .migas a { color: var(--muted); text-decoration: none; }
+    .migas a:hover { color: var(--text); }
+    .cabecera { margin-bottom: 14px; }
+    .cabecera h1 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); margin: 6px 0 4px; }
+    .chip-region { font-size: 13px; color: var(--blue); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; vertical-align: middle; margin-left: 8px; }
+    .etiqueta { color: var(--muted); margin: 0 0 12px; }
+    .datos-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--muted); font-size: 13px; }
+    .datos-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+    .pill.ok { color: var(--green); }
+    .pill.warn { color: var(--yellow); }
+    .aviso { border: 1px solid var(--line); border-left: 3px solid var(--yellow); background: var(--surface); color: var(--muted); padding: 10px 14px; border-radius: 8px; font-size: 13px; }
+
+    .podio { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 16px 0; }
+    .podio-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 2px; }
+    .podio-card.oro { border-color: #f8de3599; }
+    .podio-card.plata { border-color: #c8d2e499; }
+    .podio-card.bronce { border-color: #d08b5b99; }
+    .podio-puesto { font-family: var(--font-display); font-size: 20px; color: var(--muted); }
+    .podio-jugador { font-weight: 600; font-size: 16px; word-break: break-word; }
+    .podio-jugador a { color: var(--text); text-decoration: none; }
+    .podio-jugador a:hover { color: var(--pink); }
+    .podio-numeros { display: flex; align-items: baseline; gap: 8px; color: var(--muted); font-size: 12px; flex-wrap: wrap; }
+    .podio-numeros b { font-family: var(--font-display); font-size: 26px; color: var(--text); }
+
+    .caja-tabla { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; margin: 18px 0 26px; }
+    .controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 10px; }
+    .buscador { display: flex; align-items: center; gap: 8px; background: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; flex: 1 1 260px; }
+    .buscador input { background: none; border: none; outline: none; color: var(--text); font: inherit; width: 100%; }
+    .selector { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
+    .selector select { background: var(--ink); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font: inherit; }
+    .contador { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .scroll { max-height: 70vh; overflow: auto; border-radius: 10px; border: 1px solid var(--line); }
+    .tabla { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+    .tabla th { position: sticky; top: 0; z-index: 2; background: #0b1424; color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .tabla th.orden { cursor: pointer; user-select: none; }
+    .tabla th.orden:hover { color: var(--text); }
+    .tabla td { padding: 8px 12px; border-bottom: 1px solid #12203a; font-size: 14px; }
+    .tabla td.num, .tabla th.num { text-align: right; }
+    .tabla tbody tr:hover td { background: #0d1930; }
+    .tabla tr.top1 td { background: #f8de350f; }
+    .tabla tr.top3 td { background: #52a8ff0a; }
+    .jugador a { color: var(--text); text-decoration: none; border-bottom: 1px dotted #3b4d70; }
+    .jugador a:hover { color: var(--pink); border-color: var(--pink); }
+    .destacado { font-weight: 600; }
+    .pie-tabla { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; }
+    .boton { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; font: inherit; cursor: pointer; }
+    .boton:hover { border-color: var(--blue); }
+    .pie-tabla .meta { color: var(--muted); font-size: 12px; flex: 1 1 280px; }
+    .pie-tabla .meta a { color: var(--blue); }
+  </style>
+</BaseLayout>

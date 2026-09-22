@@ -1,0 +1,180 @@
+---
+/**
+ * Ficha de jugador: PR estimado, desglose, vencimientos y simulacion.
+ *
+ * Los numeros vienen YA CALCULADOS por el motor de PR en Python
+ * (`exportar_jugadores.py` en el proyecto del collector los deja en `src/data/jugadores.json`).
+ * Astro no reimplementa la matematica: solo la pinta.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import { fichas, n, fechaCorta, type Ficha } from '../../lib/datos';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+export function getStaticPaths() {
+  return Object.entries(fichas.fichas).map(([slug, ficha]) => ({ params: { slug }, props: { ficha } }));
+}
+
+const { ficha } = Astro.props as { ficha: Ficha };
+const torneosQueCuentan = ficha.torneos.filter((t) => t.cuenta);
+const otras = ficha.torneos.filter((t) => !t.cuenta).length + ficha.otrasRondas.length;
+const prMasAlto = ficha.simulacion.length ? Math.max(...ficha.simulacion.map((s) => s.pr)) : ficha.pr;
+---
+
+<BaseLayout
+  title={`${ficha.nombre} · ficha y PR estimado · ALTURA`}
+  description={`Ficha de ${ficha.nombre}: PR estimado ${n(ficha.pr)}, ${ficha.resultadosContados} torneos que cuentan, vencimientos y simulación.`}
+>
+  <div class="page-shell">
+    <Header />
+
+    <main>
+      <nav class="migas" aria-label="Ruta">
+        <a href={base}>Inicio</a>
+        <i class="ph ph-caret-right"></i>
+        <a href={`${base}jugadores/`}>Jugadores</a>
+        <i class="ph ph-caret-right"></i>
+        <span>{ficha.nombre}</span>
+      </nav>
+
+      <section class="cabecera">
+        <span class="eyebrow">Ficha de jugador</span>
+        <h1>{ficha.nombre}</h1>
+        <div class="datos-meta">
+          <span><i class="ph ph-trophy"></i>{ficha.resultadosContados} torneo(s) en el cálculo</span>
+          {ficha.mejorPuesto && <span><i class="ph ph-medal"></i>mejor puesto: #{n(ficha.mejorPuesto)} de {n(ficha.mejorLobby)}</span>}
+          {otras > 0 && <span><i class="ph ph-list-plus"></i>{n(otras)} ronda(s) extra sin contar</span>}
+        </div>
+      </section>
+
+      <section class="grid-tres">
+        <div class="tarjeta pr-card">
+          <div class="meta">PR calculado (estimado)</div>
+          <div class="pr">{n(ficha.pr)}</div>
+          <div class="meta">{ficha.resultadosContados} resultado(s) entran en el cálculo</div>
+        </div>
+        <div class="tarjeta">
+          <div class="meta">Cómo se compone</div>
+          <div class="fuerte">promedio de los mejores 20 × 2,0</div>
+          <div class="meta">+ bonus de rango de Ranked: <b>no incluido</b> (no lo conocemos)</div>
+        </div>
+        <div class="tarjeta">
+          <div class="meta">Ventana de resultados</div>
+          <div class="fuerte">{ficha.resultadosContados} de {n(20)}</div>
+          <div class="meta">{ficha.faltanPara20 > 0 ? `faltan ${n(ficha.faltanPara20)} para llenar la ventana` : 'ventana completa'}</div>
+        </div>
+      </section>
+
+      <section class="caja">
+        <h2>Resultados en los torneos recolectados</h2>
+        <table class="tabla-mini">
+          <thead>
+            <tr><th>Torneo</th><th class="num">Puesto</th><th class="num">Lobby</th><th>Tipo</th><th class="num">Peso</th><th>Cuenta</th></tr>
+          </thead>
+          <tbody>
+            {ficha.torneos.map((t) => (
+              <tr class:list={[t.cuenta ? '' : 'no-cuenta']}>
+                <td>{t.serie.replace(/^S\d+_/, '').replace(/_/g, ' ')} <span class="chip">{t.region}</span><br /><span class="meta">{t.titulo}</span></td>
+                <td class="num">#{n(t.puesto)}</td>
+                <td class="num">{n(t.lobby)}</td>
+                <td>{t.tipo ?? '—'}</td>
+                <td class="num">{t.peso ? `×${t.peso.toFixed(1).replace('.', ',')}` : '—'}</td>
+                <td>{t.cuenta ? 'sí' : 'no'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="meta">
+          De cada torneo cuenta <b>una</b> ronda: la última registrada, lo más cercano al puesto final del
+          torneo. Las demás quedan listadas sin contar, para no sumar dos veces el mismo torneo.
+        </p>
+      </section>
+
+      <section class="caja">
+        <h2>Cuándo se te vence</h2>
+        <ul class="lista-venc">
+          {ficha.vencimientos.map((v) => (
+            <li><b>{v.label}</b><span class="meta">deja de contar el <b>{v.vence}</b> · perderías {n(v.perdida)} de PR</span></li>
+          ))}
+        </ul>
+        <p class="meta">
+          Un resultado vale completo hasta los 180 días, decae desde ahí y llega a cero a los 720. La pérdida
+          se calcula recalculando el PR sin ese resultado.
+        </p>
+      </section>
+
+      {ficha.simulacion.length > 0 && (
+        <section class="caja">
+          <h2>Qué necesito (simulación)</h2>
+          <p class="meta">Con su torneo más frecuente (<b>{ficha.tipoPrincipal}</b>) y un lobby del tamaño que suele jugar:</p>
+          <ul class="lista-sim">
+            {ficha.simulacion.map((s) => (
+              <li>
+                <span class="pct">top {s.pct}%</span>
+                <span class="meta">(puesto {n(s.puesto)} de {n(s.campo)})</span>
+                <b class:list={[s.pr >= ficha.pr ? 'sube' : 'baja']}>{n(s.pr)}</b>
+              </li>
+            ))}
+          </ul>
+          <p class="meta">
+            Se simula por porcentaje del lobby y no por puestos fijos: el rating por puesto es casi lineal en
+            la fracción del lobby, así que en lobbies de 10.000 el puesto 1 y el 50 quedan muy parecidos. Es un
+            límite del modelo, no un error de la simulación.
+          </p>
+        </section>
+      )}
+
+      <section class="caja aviso">
+        <h2>Cómo leer esto</h2>
+        <p class="meta">
+          Es un <b>PR estimado</b>: los pesos por tipo de torneo, el decay a 720 días y los "mejores 20" son los
+          <b>[DOC]</b> publicados por Epic; el rating crudo y el ensamble son <b>[SUP]</b> nuestros, calibrados
+          con los ejemplos que Epic publica, así que los números absolutos son estimaciones calibradas y no la
+          cifra oficial. No incluye el bonus de rango de Ranked ni torneos que no estén recolectados.
+          {ficha.nombre.includes(' + ') && ' Este nombre viene de un torneo en dúos: la fuente lista la pareja como un solo competidor.'}
+        </p>
+        <p class="meta">
+          <a href={`${base}jugadores/`}>Ver el ranking completo</a> ·
+          <a href={`${base}torneos/`}>Todas las tablas</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <b>ALTURA</b>
+      <span>Datos recolectados de Fortnite Tracker y del sitio oficial de Epic. PR y decay según lo publicado por Epic.</span>
+    </footer>
+  </div>
+
+  <style is:global>
+    .migas { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; margin: 18px 0 6px; }
+    .migas a { color: var(--muted); text-decoration: none; }
+    .migas a:hover { color: var(--text); }
+    .cabecera h1 { font-family: var(--font-display); font-size: clamp(24px, 3.6vw, 40px); margin: 6px 0 4px; word-break: break-word; }
+    .datos-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--muted); font-size: 13px; }
+    .datos-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .grid-tres { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin: 16px 0; }
+    .tarjeta { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+    .pr-card { border-color: #7438ff66; }
+    .pr { font-family: var(--font-display); font-size: 40px; line-height: 1.05; color: var(--text); }
+    .fuerte { font-size: 17px; font-weight: 600; margin: 2px 0; }
+    .caja { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin: 14px 0; }
+    .caja h2 { font-family: var(--font-display); font-size: 20px; margin: 0 0 10px; }
+    .caja.aviso { border-color: #f8de3555; }
+    .meta { color: var(--muted); font-size: 12.5px; }
+    .tabla-mini { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+    .tabla-mini th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    .tabla-mini td { padding: 7px 8px; border-bottom: 1px solid #12203a; font-size: 13.5px; }
+    .tabla-mini td.num, .tabla-mini th.num { text-align: right; }
+    .tabla-mini tr.no-cuenta td { opacity: .55; }
+    .chip { font-size: 10px; color: var(--blue); border: 1px solid var(--line); border-radius: 999px; padding: 1px 7px; }
+    .lista-venc, .lista-sim { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .lista-venc li, .lista-sim li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; border-bottom: 1px solid #12203a; padding-bottom: 6px; }
+    .lista-sim .pct { font-family: var(--font-display); font-size: 17px; min-width: 74px; }
+    .lista-sim b { margin-left: auto; font-family: var(--font-display); font-size: 19px; }
+    .lista-sim b.sube { color: var(--green); }
+    .lista-sim b.baja { color: var(--muted); }
+    .caja a { color: var(--blue); }
+  </style>
+</BaseLayout>

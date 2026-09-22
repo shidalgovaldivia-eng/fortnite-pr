@@ -1,0 +1,24 @@
+{
+  "name": "altura-fortnite-competitive",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "sync": "node scripts/sync-data.mjs",
+    "verificar": "node scripts/verificar-sitio.mjs",
+    "build": "astro build",
+    "publicar": "npm run sync && npm run verificar && npm run build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "@phosphor-icons/web": "^2.1.2",
+    "astro": "^6.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "typescript": "^5.9.2"
+  }
+}

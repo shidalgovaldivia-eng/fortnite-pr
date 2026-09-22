@@ -1,0 +1,156 @@
+---
+/**
+ * Listado de todas las rondas cosechadas, agrupadas por serie.
+ * Es la puerta de entrada a las tablas: sin esto, las tablas no se encuentran.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import { rondas as indice, resumen as meta, bonita, modoDe, formatoDe, fechaCorta, type Ronda } from '../../lib/datos';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const num = (x: number) => x.toLocaleString('es-CL');
+const regions = meta.regiones.length ? meta.regiones : ['BR', 'EU', 'NAC', 'NAW', 'ASIA', 'ME', 'OCE'];
+
+// Una fila por ronda; se agrupa por serie para que se entienda la estructura del calendario.
+const porSerie = new Map<string, Ronda[]>();
+for (const r of indice) {
+  const lista = porSerie.get(r.serie) ?? [];
+  lista.push(r);
+  porSerie.set(r.serie, lista);
+}
+const series = [...porSerie.entries()].sort((a, b) => b[1].length - a[1].length);
+const conElims = indice.filter((r) => r.conElims > 0).length;
+---
+
+<BaseLayout title="Torneos · ALTURA" description={`${indice.length} rondas cosechadas con tablas completas: ${series.length} series y ${regions.length} regiones.`}>
+  <div class="page-shell">
+    <Header />
+
+    <main>
+      <nav class="migas" aria-label="Ruta">
+        <a href={base}>Inicio</a>
+        <i class="ph ph-caret-right"></i>
+        <span>Torneos</span>
+      </nav>
+
+      <section class="cabecera">
+        <span class="eyebrow">Todo lo recolectado</span>
+        <h1>Torneos y tablas</h1>
+        <p class="etiqueta">
+          {num(indice.length)} rondas de {series.length} series en {regions.length} regiones ·
+          {num(meta.jugadoresRegistrados)} apariciones de jugador registradas.
+          {conElims} de ellas con eliminaciones totales (el resto trae solo el promedio, y lo decimos).
+        </p>
+      </section>
+
+      <div class="controles">
+        <label class="buscador">
+          <i class="ph ph-magnifying-glass"></i>
+          <input id="q" type="search" placeholder="Filtrar por serie, región o fecha…" autocomplete="off" />
+        </label>
+        <div class="regiones" id="regiones">
+          <button class="region is-active" data-region="TODAS">Todas</button>
+          {regions.map((r) => <button class="region" data-region={r}>{r}</button>)}
+        </div>
+        <span class="contador" id="info"></span>
+      </div>
+
+      <div class="lista" id="lista">
+        {series.map(([serie, rondas]) => (
+          <section class="serie" data-serie={serie}>
+            <header class="serie-cabecera">
+              <h2>{bonita(serie)}</h2>
+              <p>{modoDe(serie)} · {formatoDe(rondas[0].serie)} · {rondas.length} ronda(s)</p>
+            </header>
+            <ul>
+              {rondas.map((r) => (
+                <li class="ronda" data-region={r.region} data-busca={`${serie} ${r.region} ${r.etiqueta} ${r.fecha ?? ''}`.toLowerCase()}>
+                  <a href={`${base}torneos/${r.slug}/`}>
+                    <span class="region-chip">{r.region}</span>
+                    <span class="ronda-nombre">{r.titulo}</span>
+                    <span class="ronda-fecha">{fechaCorta(r.fecha)}</span>
+                    <span class="ronda-jugadores">{num(r.jugadores)} jug.</span>
+                    {r.conElims > 0 && <span class="marca" title="Trae eliminaciones totales">elims</span>}
+                    <i class="ph ph-caret-right"></i>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+        <p class="vacio" hidden>Sin rondas que coincidan con ese filtro.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <b>ALTURA</b>
+      <span>Datos recolectados de Fortnite Tracker y del sitio oficial de Epic. Actualizado {new Date(meta.generado).toLocaleString('es-CL')}.</span>
+    </footer>
+  </div>
+
+  <script>
+    const rondas = Array.from(document.querySelectorAll<HTMLLIElement>('.ronda'));
+    const series = Array.from(document.querySelectorAll<HTMLElement>('.serie'));
+    const q = document.getElementById('q') as HTMLInputElement;
+    const info = document.getElementById('info')!;
+    const vacio = document.querySelector<HTMLElement>('.vacio')!;
+    const num = (n: number) => n.toLocaleString('es-CL');
+    const parametro = new URLSearchParams(location.search).get('q');
+    let region = 'TODAS';
+    if (parametro) q.value = parametro;
+
+    function aplicar() {
+      const texto = q.value.trim().toLowerCase();
+      let visibles = 0;
+      rondas.forEach((li) => {
+        const okRegion = region === 'TODAS' || li.dataset.region === region;
+        const okTexto = !texto || (li.dataset.busca ?? '').includes(texto);
+        li.hidden = !(okRegion && okTexto);
+        if (!li.hidden) visibles += 1;
+      });
+      // Una serie sin rondas visibles no se muestra (encabezado huerfano).
+      series.forEach((s) => {
+        s.hidden = !s.querySelector('.ronda:not([hidden])');
+      });
+      info.textContent = `${num(visibles)} de ${num(rondas.length)} rondas`;
+      vacio.hidden = visibles !== 0;
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('.region').forEach((b) => {
+      b.addEventListener('click', () => {
+        region = b.dataset.region ?? 'TODAS';
+        document.querySelectorAll('.region').forEach((o) => o.classList.toggle('is-active', o === b));
+        aplicar();
+      });
+    });
+    q.addEventListener('input', aplicar);
+    aplicar();
+  </script>
+
+  <style>
+    .migas { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; margin: 18px 0 6px; }
+    .migas a { color: var(--muted); text-decoration: none; }
+    .cabecera h1 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); margin: 6px 0 4px; }
+    .etiqueta { color: var(--muted); max-width: 70ch; }
+    .controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 0; }
+    .buscador { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; flex: 1 1 260px; }
+    .buscador input { background: none; border: none; outline: none; color: var(--text); font: inherit; width: 100%; }
+    .regiones { display: flex; flex-wrap: wrap; gap: 6px; }
+    .region { background: var(--surface); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+    .region.is-active, .region:hover { color: var(--text); border-color: var(--blue); }
+    .contador { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .lista { display: grid; gap: 18px; }
+    .serie { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+    .serie-cabecera { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+    .serie-cabecera h2 { font-family: var(--font-display); font-size: 22px; margin: 0; }
+    .serie-cabecera p { color: var(--muted); font-size: 13px; margin: 0; }
+    .serie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+    .ronda a { display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 8px; color: var(--text); text-decoration: none; font-size: 14px; }
+    .ronda a:hover { background: #0d1930; }
+    .region-chip { font-size: 11px; color: var(--blue); border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; min-width: 48px; text-align: center; }
+    .ronda-nombre { flex: 1 1 auto; }
+    .ronda-fecha, .ronda-jugadores { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .marca { font-size: 10px; color: var(--green); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+    .vacio { color: var(--muted); }
+  </style>
+</BaseLayout>

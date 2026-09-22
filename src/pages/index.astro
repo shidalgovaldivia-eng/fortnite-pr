@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import RegionSelector from '../components/RegionSelector.astro';
+import TournamentCard from '../components/TournamentCard.astro';
+import { tournaments, sessions, results, meta, proximaSesion, bonita } from '../data';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const num = (n: number) => n.toLocaleString('es-CL');
+---
+<BaseLayout>
+  <div class="page-shell">
+    <Header />
+    <RegionSelector />
+
+    <main>
+      <section class="hero-grid">
+        <article class="featured-event">
+          <img src={`${base}assets/hero-serie-glitch.png`} alt="" />
+          <div class="featured-event__veil"></div>
+          <div class="featured-event__content">
+            <span class="eyebrow">Próxima sesión en el calendario</span>
+            <h1>{proximaSesion ? bonita(proximaSesion.name) : 'Fortnite<br />competitivo'}</h1>
+            <p class="hero-tagline">Tablas reales de los torneos.<br />Todas las regiones.</p>
+            <div class="hero-meta">
+              <span><i class="ph ph-calendar-blank"></i>{proximaSesion ? proximaSesion.date : '—'}</span>
+              <span><i class="ph ph-clock-countdown"></i>
+                {proximaSesion ? (proximaSesion.enDias === 0 ? 'Hoy' : `En ${proximaSesion.enDias} día${proximaSesion.enDias === 1 ? '' : 's'}`) : '—'}
+              </span>
+              <span><i class="ph ph-crosshair"></i>Región: {proximaSesion?.region ?? '—'}</span>
+              <span><i class="ph ph-users"></i>{num(meta.jugadoresRegistrados)} apariciones registradas</span>
+            </div>
+            <a class="primary-cta" href={`${base}torneos/${tournaments[0]?.slug ?? ''}/`}>Ver la última tabla <i class="ph ph-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <aside class="schedule" aria-labelledby="schedule-title">
+          <div class="section-heading"><h2 id="schedule-title">Próximas sesiones</h2><a href="#campeonatos">Ver calendario completo <i class="ph ph-arrow-right"></i></a></div>
+          <div class="schedule-list">
+            {sessions.map((session) => (
+              <a class="session" href="#campeonatos" data-session-region={session.region}>
+                <img src={`${base}assets/${session.image}`} alt="" />
+                <div class="session__time"><small>{session.date}</small><strong>{session.time}</strong></div>
+                <div class="session__copy"><span>{session.region}</span><b>{session.name}</b><small>{session.mode}</small></div>
+                <i class="ph ph-caret-right"></i>
+              </a>
+            ))}
+          </div>
+          <p class="schedule__motto">Diferentes regiones. La misma pasión.</p>
+        </aside>
+      </section>
+
+      <section class="championships" id="campeonatos">
+        <div class="section-heading section-heading--wide">
+          <div><h2>Campeonatos</h2><p>Explora los torneos por región y descubre nuevas historias.</p></div>
+          <a href="#campeonatos">Ver todos los torneos <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="tournament-grid">
+          {tournaments.map((tournament) => <TournamentCard tournament={tournament} />)}
+          <p class="empty-state" hidden>No hay campeonatos para esta búsqueda.</p>
+        </div>
+      </section>
+
+      <section class="results" id="resultados">
+        <div class="section-heading section-heading--wide"><div><h2>Últimos resultados</h2><p>Grandes partidas. Nuevos campeones.</p></div><a href="#resultados">Ver clasificaciones <i class="ph ph-arrow-right"></i></a></div>
+        <div class="result-grid">
+          {results.map((result) => (
+            <article class="result-card">
+              <img src={`${base}assets/${result.image}`} alt="" loading="lazy" />
+              <div><b>{result.tournament}</b><p>{result.region}<span></span>{result.format}<span></span>{result.date}</p><footer><strong>1</strong><span class="flag">◆</span><span>{result.player}</span><em>{result.points} <small>pts</small></em></footer><a class="result-link" href={`${base}torneos/${result.slug}/`}>Ver la tabla completa <i class="ph ph-arrow-right"></i></a></div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><b>ALTURA</b><span>La escena competitiva, más cerca de vos.</span><p><i></i>Actualizado 22 Sep 2026 · 15:11</p></footer>
+  </div>
+
+  <script>
+    const regionButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.region-button'));
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('.tournament-card'));
+    const search = document.querySelector<HTMLInputElement>('.global-search input');
+    const emptyState = document.querySelector<HTMLElement>('.empty-state');
+    let activeRegion = 'TODAS';
+
+    function filterCards() {
+      const query = search?.value.trim().toLocaleLowerCase('es') ?? '';
+      let visible = 0;
+      cards.forEach((card) => {
+        const matchesRegion = activeRegion === 'TODAS' || card.dataset.region === activeRegion;
+        const matchesQuery = !query || card.dataset.name?.includes(query) || card.dataset.region?.toLowerCase().includes(query);
+        card.hidden = !(matchesRegion && matchesQuery);
+        if (!card.hidden) visible += 1;
+      });
+      if (emptyState) emptyState.hidden = visible !== 0;
+    }
+
+    regionButtons.forEach((button) => button.addEventListener('click', () => {
+      activeRegion = button.dataset.region ?? 'BR';
+      regionButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+      document.body.classList.add('is-filtering');
+      setTimeout(() => { filterCards(); document.body.classList.remove('is-filtering'); }, 180);
+    }));
+    search?.addEventListener('input', filterCards);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === '/' && document.activeElement !== search) { event.preventDefault(); search?.focus(); }
+    });
+    filterCards();
+  </script>
+</BaseLayout>
