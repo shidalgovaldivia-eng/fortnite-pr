@@ -63,7 +63,7 @@ const cuando = (s: (typeof sesionesFuturas)[number]) =>
                 <li class="sesion">
                   <img src={`${base}assets/${imagenDe(s.serie) || IMAGENES_GENERICAS[0]}`} alt="" loading="lazy" />
                   <div class="sesion-copia">
-                    <b>{bonita(s.serie)} <span class="region">{s.region}</span></b>
+                    <b>{bonita(s.serie)} <span class="region">{s.region === '??' ? 'Global' : s.region}</span></b>
                     <small>{modoDe(s.serie)} · {formatoDe(s.serie)} · {s.etiqueta.replace(/\s*\d+\/\d+\/\d+.*$/, '') || 'Sesión'}</small>
                   </div>
                   <div class="sesion-hora">

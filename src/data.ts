@@ -65,8 +65,8 @@ export const tournaments: Tournament[] = rondas.slice(0, 6).map((r, i) => ({
 export const sessions = sesionesFuturas.slice(0, 3).map((s, i) => ({
   date: fechaCorta(s.fecha),
   time: new Date(s.fecha).toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' }),
-  region: s.region,
-  name: `${bonita(s.serie)} ${s.region}`,
+  region: s.region === '??' ? 'Global' : s.region,
+  name: `${bonita(s.serie)} ${s.region === '??' ? 'Global' : s.region}`,
   mode: `${modoDe(s.serie)} · ${s.etiqueta.replace(/\s*\d+\/\d+\/\d+.*$/, '') || 'Evento'}`,
   image: imagenDe(s.serie) || IMAGENES[i % IMAGENES.length],
   enDias: s.enDias,
