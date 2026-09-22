@@ -1104,6 +1104,38 @@
   "conPromedioElims": 50
  },
  {
+  "slug": "br-s42-reloadcashcup-duoszb-s42-reloadcashcup-duoszb-event3round2-br",
+  "archivo": "br-s42-reloadcashcup-duoszb-s42-reloadcashcup-duoszb-event3round2-br.json",
+  "serie": "S42_ReloadCashCup_DuosZB",
+  "region": "BR",
+  "ronda": "S42_ReloadCashCup_DuosZB_Event3Round2_BR",
+  "etiqueta": "Event 3 Round 2 9/18/2026 06:00 PM - 08:15 PM",
+  "titulo": "Event 3 Round 2 9/18/2026 06:00 PM - 08:15 PM",
+  "fecha": "2026-09-18T18:00:00.000Z",
+  "etiquetaFecha": "2026-09-18",
+  "fuente": "fortnite-tracker",
+  "jugadores": 19,
+  "paginas": 1,
+  "conElims": 0,
+  "conPromedioElims": 19
+ },
+ {
+  "slug": "asia-s42-reloadcashcup-duoszb-s42-reloadcashcup-duoszb-event3round2-as",
+  "archivo": "asia-s42-reloadcashcup-duoszb-s42-reloadcashcup-duoszb-event3round2-as.json",
+  "serie": "S42_ReloadCashCup_DuosZB",
+  "region": "ASIA",
+  "ronda": "S42_ReloadCashCup_DuosZB_Event3Round2_ASIA",
+  "etiqueta": "Event 3 Round 2 9/18/2026 06:00 AM - 08:15 AM",
+  "titulo": "Event 3 Round 2 9/18/2026 06:00 AM - 08:15 AM",
+  "fecha": "2026-09-18T06:00:00.000Z",
+  "etiquetaFecha": "2026-09-18",
+  "fuente": "fortnite-tracker",
+  "jugadores": 19,
+  "paginas": 1,
+  "conElims": 0,
+  "conPromedioElims": 19
+ },
+ {
   "slug": "nac-s42-performanceevaluation-s42-performanceevaluation-event4round1-n",
   "archivo": "nac-s42-performanceevaluation-s42-performanceevaluation-event4round1-n.json",
   "serie": "S42_PerformanceEvaluation",

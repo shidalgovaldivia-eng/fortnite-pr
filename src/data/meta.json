@@ -1,7 +1,7 @@
 {
- "generado": "2026-09-22T18:44:04.086Z",
- "rondas": 84,
- "jugadoresRegistrados": 193539,
+ "generado": "2026-09-22T19:27:52.171Z",
+ "rondas": 86,
+ "jugadoresRegistrados": 193577,
  "fichasDeJugador": 800,
  "proximasSesiones": 40,
  "series": [
@@ -15,6 +15,7 @@
   "S42_RankedCupReloadDuos_ZB",
   "S42_RankedCupSoloReload",
   "S42_RankedCupSoloReload_ZB",
+  "S42_ReloadCashCup_DuosZB",
   "S42_SoloVictoryCup"
  ],
  "regiones": [
