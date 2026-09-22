@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha · OrcaHornisse28 + Magic JT ک</title><style>
+  :root { --oro:#f5c451; --oro-oscuro:#8a6a1f; --borde:var(--border,#2a2f36);
+          --texto:var(--foreground,#e8eaed); --suave:var(--muted-foreground,#9aa4ad);
+          --tarjeta:var(--card,#14181d); }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:14px; color:var(--texto); font:13px/1.5 ui-sans-serif,system-ui,sans-serif; }
+  a { color:var(--oro); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  h1 { font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:var(--suave); margin:0 0 3px; }
+  h2 { font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--suave); margin:16px 0 6px; }
+  .sub { font-size:21px; font-weight:800; margin:0 0 4px; }
+  .meta { color:var(--suave); font-size:11.5px; }
+  .barra { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:10px 0 12px; }
+  input[type=search] { background:rgba(255,255,255,.04); border:1px solid var(--borde); color:var(--texto);
+    border-radius:3px; padding:8px 10px; font:inherit; min-width:250px; }
+  button { font:inherit; font-weight:700; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--oro); background:rgba(245,196,81,.08); border:1px solid var(--oro-oscuro); border-radius:2px;
+    padding:7px 11px; cursor:pointer; }
+  button:hover { background:rgba(245,196,81,.18); }
+  table { border-collapse:collapse; width:100%; font-variant-numeric:tabular-nums; }
+  th, td { padding:5px 8px; border-bottom:1px solid rgba(255,255,255,.06); text-align:left; }
+  th { font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--suave); }
+  td.num, th.num { text-align:right; }
+  tr.top1 td { background:rgba(245,196,81,.12); }
+  tr.top3 td { background:rgba(245,196,81,.06); }
+  .chip { font-size:10px; color:var(--suave); border:1px solid var(--borde); border-radius:2px; padding:1px 5px; }
+  .caja { border:1px solid var(--borde); border-radius:3px; padding:10px 12px; margin:10px 0;
+          background:rgba(255,255,255,.02); }
+  .caja.aviso { border-color:#7d6a2f; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:8px; }
+  .tarjeta { border:1px solid var(--borde); border-radius:3px; padding:9px 11px; background:rgba(255,255,255,.02); }
+  .tarjeta ul { margin:6px 0 0; padding-left:16px; }
+  .tarjeta li { margin:2px 0; }
+  .pr { font-size:32px; font-weight:800; color:var(--oro); line-height:1.1; }
+  .fila { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  footer { margin-top:22px; color:var(--suave); font-size:10.5px; line-height:1.6; }
+</style></head>
+<body>
+
+<h1>Ficha de jugador</h1>
+<p class="sub">OrcaHornisse28 + Magic JT ک</p>
+<div class="grid">
+  <div class="tarjeta"><div class="meta">PR calculado (estimado)</div><div class="pr">34.643</div>
+    <div class="meta">3 de 3 resultado(s) entran en el calculo</div></div>
+  <div class="tarjeta"><div class="meta">Como se compone</div>
+    <div style="font-size:18px;font-weight:700">promedio de los mejores 20 x 2,0</div>
+    <div class="meta">+ bonus de rango de Ranked: <b>no incluido</b> (no lo conocemos)</div></div>
+  <div class="tarjeta"><div class="meta">Torneos que cuentan</div>
+    <div style="font-size:18px;font-weight:700">3 de 20</div>
+    <div class="meta">faltan 17 para llenar la ventana</div></div>
+</div>
+
+<div class="caja">
+  <h2 style="margin-top:0">Sus resultados en los torneos recolectados</h2>
+  <table><thead><tr><th>Torneo y ronda</th><th class="num">Puesto</th><th class="num">Lobby</th>
+  <th class="num">Tipo</th><th class="num">Peso</th><th class="num">Cuenta</th></tr></thead>
+  <tbody><tr><td>S42_RankedCupReloadDuos <span class="chip">EU</span><br><span class="meta">Event 4 9/21/2026 02:00 PM - 05:00 PM</span></td><td class="num">#1.045</td><td class="num">10.000</td><td class="num">ranked_cup</td><td class="num">x0,8</td><td class="num">si</td></tr><tr><td>S42_RankedCupReloadDuos_ZB <span class="chip">EU</span><br><span class="meta">Event 4 9/21/2026 02:00 PM - 05:00 PM</span></td><td class="num">#3.058</td><td class="num">8.106</td><td class="num">ranked_cup</td><td class="num">x0,8</td><td class="num">si</td></tr><tr><td>S42_RankedCupReloadDuos_ZB <span class="chip">ME</span><br><span class="meta">Event 4 9/21/2026 12:00 PM - 03:00 PM</span></td><td class="num">#502</td><td class="num">1.404</td><td class="num">ranked_cup</td><td class="num">x0,8</td><td class="num">si</td></tr></tbody></table>
+  <p class="meta">De cada torneo cuenta <b>una</b> ronda (la ultima registrada, lo mas cercano al puesto final);
+  las demas quedan listadas sin contar, para no inflar el PR contando dos veces el mismo torneo.</p>
+</div>
+
+<div class="caja">
+  <h2 style="margin-top:0">Cuando se te vence</h2>
+  <ul><li><b>S42_RankedCupReloadDuos EU · Event 4 9/21/2026 02:00 PM - 05:00 PM</b><br><span class="meta">deja de contar el <b>10-09-2028</b> · perderias 12.249 de PR</span></li><li><b>S42_RankedCupReloadDuos_ZB ME · Event 4 9/21/2026 12:00 PM - 03:00 PM</b><br><span class="meta">deja de contar el <b>10-09-2028</b> · perderias 11.236 de PR</span></li><li><b>S42_RankedCupReloadDuos_ZB EU · Event 4 9/21/2026 02:00 PM - 05:00 PM</b><br><span class="meta">deja de contar el <b>10-09-2028</b> · perderias 11.158 de PR</span></li></ul>
+  <p class="meta">Un resultado vale completo hasta los 180 dias, decae desde ahi y llega a
+  cero a los 720. La perdida se calcula recalculando el PR sin ese resultado [DOC].</p>
+</div>
+
+<div class="caja">
+  <h2 style="margin-top:0">Que necesito (simulacion)</h2>
+  <ul><li>top 1% (puesto 65 de 6.503) en ranked_cup &rarr; <b>35.452</b> de PR</li><li>top 5% (puesto 325 de 6.503) en ranked_cup &rarr; <b>35.332</b> de PR</li><li>top 10% (puesto 650 de 6.503) en ranked_cup &rarr; <b>35.182</b> de PR</li><li>top 25% (puesto 1.626 de 6.503) en ranked_cup &rarr; <b>34.732</b> de PR</li><li>top 50% (puesto 3.252 de 6.503) en ranked_cup &rarr; <b>33.982</b> de PR</li></ul>
+  <p class="meta">Simulacion con su torneo mas frecuente y un lobby del tamano que suele jugar. No incluye bonus
+  de rango ni torneos que no esten recolectados.</p>
+</div>
+
+<div class="caja aviso">
+  <h2 style="margin-top:0">Como leer esto</h2>
+  <p class="meta">Es un <b>PR estimado</b>: los pesos por tipo de torneo, el decay a 720 dias
+  y los mejores 20 son <b>[DOC]</b> de Epic; el rating crudo y el ensamble son <b>[SUP]</b> nuestros,
+  calibrados con los ejemplos publicados por Epic. Los numeros absolutos son estimaciones calibradas, no la cifra
+  oficial de Epic.</p>
+  <p class="meta">Dos limites que conviene saber: (1) el rating por puesto se calibro con los tres ejemplos que Epic
+  publica y es casi lineal en la fraccion del lobby, asi que en lobbies muy grandes el <b>puesto 1 y el puesto 50
+  quedan muy parecidos</b>; (2) en torneos de duos la fuente lista <b>la pareja</b> como un solo nombre, no a cada
+  jugador. En ambos casos preferimos mostrarlo antes que esconderlo.</p>
+</div>
+
+<footer>
+  Tablas recolectadas de Fortnite Tracker (fuente primaria) y fortnite.com/competitive (respaldo, aporta
+  <b>elims totales</b>). Pesos de evento, decay y "mejores 20": <b>[DOC]</b> de Epic.
+  Rating crudo y ensamble: <b>[SUP]</b>, calibrado con los ejemplos publicados por Epic.<br>
+  Sitio estatico generado desde los JSON del collector el 2026-09-22 15:11 UTC. Sin backend, sin base de datos.
+</footer>
+</body></html>
