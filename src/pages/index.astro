@@ -34,10 +34,10 @@ const num = (n: number) => n.toLocaleString('es-CL');
         </article>
 
         <aside class="schedule" aria-labelledby="schedule-title">
-          <div class="section-heading"><h2 id="schedule-title">Próximas sesiones</h2><a href="#campeonatos">Ver calendario completo <i class="ph ph-arrow-right"></i></a></div>
+          <div class="section-heading"><h2 id="schedule-title">Próximas sesiones</h2><a href={`${base}calendario/`}>Ver calendario completo <i class="ph ph-arrow-right"></i></a></div>
           <div class="schedule-list">
             {sessions.map((session) => (
-              <a class="session" href={`${base}torneos/`} data-session-region={session.region}>
+              <a class="session" href={`${base}calendario/`} data-session-region={session.region}>
                 <img src={`${base}assets/${session.image}`} alt="" />
                 <div class="session__time"><small>{session.date}</small><strong>{session.time}</strong></div>
                 <div class="session__copy">
@@ -55,7 +55,7 @@ const num = (n: number) => n.toLocaleString('es-CL');
       <section class="championships" id="campeonatos">
         <div class="section-heading section-heading--wide">
           <div><h2>Campeonatos</h2><p>Explora los torneos por región y descubre nuevas historias.</p></div>
-          <a href="#campeonatos">Ver todos los torneos <i class="ph ph-arrow-right"></i></a>
+          <a href={`${base}torneos/`}>Ver todos los torneos <i class="ph ph-arrow-right"></i></a>
         </div>
         <div class="tournament-grid">
           {tournaments.map((tournament) => <TournamentCard tournament={tournament} />)}
@@ -64,7 +64,7 @@ const num = (n: number) => n.toLocaleString('es-CL');
       </section>
 
       <section class="results" id="resultados">
-        <div class="section-heading section-heading--wide"><div><h2>Últimos resultados</h2><p>Grandes partidas. Nuevos campeones.</p></div><a href="#resultados">Ver clasificaciones <i class="ph ph-arrow-right"></i></a></div>
+        <div class="section-heading section-heading--wide"><div><h2>Últimos resultados</h2><p>Grandes partidas. Nuevos campeones.</p></div><a href={`${base}jugadores/`}>Ver clasificaciones <i class="ph ph-arrow-right"></i></a></div>
         <div class="result-grid">
           {results.map((result) => (
             <article class="result-card">

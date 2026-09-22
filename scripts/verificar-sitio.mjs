@@ -111,5 +111,20 @@ if (existsSync(ranking)) {
   chk('existe /jugadores/', false);
 }
 
+console.log('\n5) calendario y navegacion (el bug del overlay pegado)');
+const cal = path.join(dist, 'calendario', 'index.html');
+chk('existe /calendario/', existsSync(cal));
+if (existsSync(cal)) {
+  const html = readFileSync(cal, 'utf8');
+  const sesiones = (html.match(/class="sesion"/g) ?? []).length;
+  const esperadas = leer('src/data/calendario.json').length;
+  chk('el calendario lista las sesiones por jugar', sesiones === esperadas, `${sesiones} vs ${esperadas}`);
+  chk('el calendario no muestra torneos ya jugados', !/Finalizada/.test(html));
+}
+const portadaHtml = readFileSync(path.join(dist, 'index.html'), 'utf8');
+const anclas = (portadaHtml.match(/href="#[a-zA-Z]/g) ?? []).length;
+chk('la portada no tiene enlaces ancla sueltos', anclas === 0, `${anclas} encontrados (rompian el loader)`);
+chk('el loader ignora los enlaces de la misma pagina', /mismaPagina/.test(portadaHtml));
+
 console.log('\n' + (fallos.length ? `${fallos.length} FALLA(S)` : 'TODO OK'));
 process.exit(fallos.length ? 1 : 0);

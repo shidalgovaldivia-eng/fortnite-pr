@@ -29,9 +29,14 @@ const { title = 'ALTURA · Fortnite competitivo', description = 'Torneos, result
         const link = event.target.closest('a[href]');
         if (!link || event.metaKey || event.ctrlKey || link.target === '_blank') return;
         const url = new URL(link.href, location.href);
-        if (url.origin === location.origin && url.href !== location.href) loader?.classList.add('is-active');
+        // OJO: un enlace ANCLA (#campeonatos) NO navega, asi que el loader quedaría encendido para
+        // siempre y tapaba la pagina ("se pega" al pulsar Ver calendario completo"). Solo se activa
+        // cuando cambia de verdad la ruta o los parametros.
+        const mismaPagina = url.origin === location.origin && url.pathname === location.pathname && url.search === location.search;
+        if (url.origin === location.origin && !mismaPagina) loader?.classList.add('is-active');
       });
       window.addEventListener('pageshow', () => loader?.classList.remove('is-active'));
+      window.addEventListener('hashchange', () => loader?.classList.remove('is-active'));
     </script>
   </body>
 </html>
