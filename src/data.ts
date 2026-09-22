@@ -10,6 +10,8 @@ import {
   sesionesFuturas,
   resumen,
   filasDe,
+  imagenDe,
+  IMAGENES_GENERICAS,
   bonita,
   modoDe,
   formatoDe,
@@ -33,17 +35,17 @@ export type Tournament = {
   legacyUrl: string;
 };
 
-const IMAGENES = [
-  'tournament-victory.png',
-  'tournament-contenders.png',
-  'tournament-global.png',
-  'tournament-elite.png',
-  'tournament-reload.png',
-];
+const IMAGENES = IMAGENES_GENERICAS;
 
 export const regions = resumen.regiones.length ? resumen.regiones : ['BR', 'EU', 'NAC', 'NAW', 'ASIA', 'ME', 'OCE'];
 
 const num = (x: number) => x.toLocaleString('es-CL');
+
+/**
+ * Estado REAL de una ronda recolectada: si tenemos sus standings, el torneo ya se jugó. Antes se
+ * marcaba "En curso" a toda ronda con fecha de hoy, y por eso un torneo terminado decía "en vivo".
+ */
+const estadoDeRonda = (fecha: string | null) => (esHoy(fecha) ? 'Finalizada hoy' : 'Finalizada');
 
 /** Las rondas mas recientes mandan: son las que la gente quiere ver primero. */
 export const tournaments: Tournament[] = rondas.slice(0, 6).map((r, i) => ({
@@ -54,8 +56,8 @@ export const tournaments: Tournament[] = rondas.slice(0, 6).map((r, i) => ({
   mode: modoDe(r.serie),
   format: formatoDe(r.serie),
   date: fechaCorta(r.fecha),
-  status: esHoy(r.fecha) ? 'En curso' : `${num(r.jugadores)} jugadores`,
-  image: IMAGENES[i % IMAGENES.length],
+  status: estadoDeRonda(r.fecha),
+  image: imagenDe(r.serie) || IMAGENES[i % IMAGENES.length],
   legacyUrl: r.legacy ?? '',
 }));
 
@@ -66,8 +68,11 @@ export const sessions = sesionesFuturas.slice(0, 3).map((s, i) => ({
   region: s.region,
   name: `${bonita(s.serie)} ${s.region}`,
   mode: `${modoDe(s.serie)} · ${s.etiqueta.replace(/\s*\d+\/\d+\/\d+.*$/, '') || 'Evento'}`,
-  image: IMAGENES[i % IMAGENES.length],
+  image: imagenDe(s.serie) || IMAGENES[i % IMAGENES.length],
   enDias: s.enDias,
+  enHoras: s.enHoras,
+  // Si la sesion es de hoy y NO tenemos sus standings, esta corriendo ahora mismo.
+  enVivo: esHoy(s.fecha),
 }));
 
 /** Ganador real de las tres rondas mas recientes. */

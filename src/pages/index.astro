@@ -15,7 +15,7 @@ const num = (n: number) => n.toLocaleString('es-CL');
     <main>
       <section class="hero-grid">
         <article class="featured-event">
-          <img src={`${base}assets/hero-serie-glitch.png`} alt="" />
+          <img src={`${base}assets/${proximaSesion?.image ?? 'hero-serie-glitch.png'}`} alt="" />
           <div class="featured-event__veil"></div>
           <div class="featured-event__content">
             <span class="eyebrow">Próxima sesión en el calendario</span>
@@ -37,10 +37,13 @@ const num = (n: number) => n.toLocaleString('es-CL');
           <div class="section-heading"><h2 id="schedule-title">Próximas sesiones</h2><a href="#campeonatos">Ver calendario completo <i class="ph ph-arrow-right"></i></a></div>
           <div class="schedule-list">
             {sessions.map((session) => (
-              <a class="session" href="#campeonatos" data-session-region={session.region}>
+              <a class="session" href={`${base}torneos/`} data-session-region={session.region}>
                 <img src={`${base}assets/${session.image}`} alt="" />
                 <div class="session__time"><small>{session.date}</small><strong>{session.time}</strong></div>
-                <div class="session__copy"><span>{session.region}</span><b>{session.name}</b><small>{session.mode}</small></div>
+                <div class="session__copy">
+                  <span>{session.region}</span><b>{session.name}</b><small>{session.mode}</small>
+                  {session.enVivo && <em class="en-vivo">en vivo ahora</em>}
+                </div>
                 <i class="ph ph-caret-right"></i>
               </a>
             ))}

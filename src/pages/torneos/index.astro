@@ -5,7 +5,7 @@
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
-import { rondas as indice, resumen as meta, bonita, modoDe, formatoDe, fechaCorta, type Ronda } from '../../lib/datos';
+import { rondas as indice, resumen as meta, bonita, modoDe, formatoDe, fechaCorta, imagenDe, type Ronda } from '../../lib/datos';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const num = (x: number) => x.toLocaleString('es-CL');
@@ -59,8 +59,11 @@ const conElims = indice.filter((r) => r.conElims > 0).length;
         {series.map(([serie, rondas]) => (
           <section class="serie" data-serie={serie}>
             <header class="serie-cabecera">
-              <h2>{bonita(serie)}</h2>
-              <p>{modoDe(serie)} · {formatoDe(rondas[0].serie)} · {rondas.length} ronda(s)</p>
+              {imagenDe(serie) && <img class="serie-img" src={`${base}assets/${imagenDe(serie)}`} alt="" loading="lazy" />}
+              <div>
+                <h2>{bonita(serie)}</h2>
+                <p>{modoDe(serie)} · {formatoDe(rondas[0].serie)} · {rondas.length} ronda(s)</p>
+              </div>
             </header>
             <ul>
               {rondas.map((r) => (
@@ -141,7 +144,8 @@ const conElims = indice.filter((r) => r.conElims > 0).length;
     .contador { color: var(--muted); font-size: 13px; margin-left: auto; }
     .lista { display: grid; gap: 18px; }
     .serie { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-    .serie-cabecera { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+    .serie-cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .serie-cabecera .serie-img { width: 74px; height: 46px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
     .serie-cabecera h2 { font-family: var(--font-display); font-size: 22px; margin: 0; }
     .serie-cabecera p { color: var(--muted); font-size: 13px; margin: 0; }
     .serie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }

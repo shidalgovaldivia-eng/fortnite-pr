@@ -72,7 +72,8 @@ async function leerRondas() {
   return [...porClave.values()];
 }
 
-async function leerCalendario() {
+// OJO: este archivo es .mjs (JavaScript puro): NO admite anotaciones de tipo de TypeScript.
+async function leerCalendario(yaJugadas) {
   const base = path.join(COLECTOR, 'data', 'events');
   const ahora = Date.now();
   const futuras = [];
@@ -88,7 +89,12 @@ async function leerCalendario() {
     for (const ronda of datos.rounds ?? []) {
       const etiqueta = String(ronda.name ?? ronda.externalId ?? '');
       const fecha = fechaDe(etiqueta);
-      if (!fecha || fecha.getTime() < ahora) continue;
+      if (!fecha) continue;
+      // `jugada` es la verdad de campo: si ya tenemos los standings de esa ronda, TERMINO. Es mas
+      // fiable que la fecha, porque la etiqueta del sitio no dice la zona horaria y una sesion ya
+      // jugada seguia apareciendo como "proxima" (y con badge de "en vivo").
+      const jugada = yaJugadas.has(ronda.externalId ?? '');
+      if (jugada || fecha.getTime() < ahora) continue;
       futuras.push({
         evento: datos.name ?? eventoId,
         eventoId,
@@ -98,6 +104,7 @@ async function leerCalendario() {
         etiqueta,
         fecha: fecha.toISOString(),
         enDias: Math.max(0, Math.round((fecha.getTime() - ahora) / 86_400_000)),
+        enHoras: Math.max(0, Math.round((fecha.getTime() - ahora) / 3_600_000)),
       });
     }
   }
@@ -161,7 +168,7 @@ async function main() {
   }
   indice.sort((a, b) => (b.fecha ?? '').localeCompare(a.fecha ?? '') || a.serie.localeCompare(b.serie));
 
-  const calendario = await leerCalendario();
+  const calendario = await leerCalendario(new Set(rondas.map((r) => r.rondaId)));
   // El numero de fichas se lee del archivo que exporta el motor de PR (Python), para no pisarlo:
   // este script NO escribe jugadores.json, solo lo cuenta.
   let fichas = 0;

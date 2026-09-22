@@ -16,6 +16,7 @@ import {
   dec,
   bonita,
   fechaLarga,
+  imagenDe,
   type Ronda,
 } from '../../lib/datos';
 
@@ -34,6 +35,8 @@ const top3 = filas.slice(0, 3);
 const sinFicha = filas.filter((f) => !slugDeJugador(f[1])).length;
 const esOficial = ronda.fuente === 'fortnite-competitive';
 const serieBonita = bonita(ronda.serie);
+// Portada real de la serie, la misma imagen que publica Fortnite Tracker para ese torneo.
+const portada = imagenDe(ronda.serie);
 ---
 
 <BaseLayout
@@ -49,6 +52,13 @@ const serieBonita = bonita(ronda.serie);
         <i class="ph ph-caret-right"></i>
         <span>{serieBonita} · {ronda.region}</span>
       </nav>
+
+      {portada && (
+        <figure class="portada-torneo">
+          <img src={`${base}assets/${portada}`} alt="" />
+          <figcaption>{serieBonita} · {ronda.region}</figcaption>
+        </figure>
+      )}
 
       <section class="cabecera">
         <span class="eyebrow">Tabla de la ronda</span>
@@ -242,6 +252,12 @@ const serieBonita = bonita(ronda.serie);
     .migas { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; margin: 18px 0 6px; }
     .migas a { color: var(--muted); text-decoration: none; }
     .migas a:hover { color: var(--text); }
+    /* Portada del torneo: la imagen que publica la fuente para esa serie. */
+    .portada-torneo { position: relative; margin: 8px 0 16px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+    .portada-torneo img { display: block; width: 100%; height: 190px; object-fit: cover; }
+    .portada-torneo figcaption { position: absolute; left: 14px; bottom: 10px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #eef1f8; text-shadow: 0 1px 6px #000; }
+    .portada-torneo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #050914d9 0%, #05091433 55%, #05091400 100%); }
+    .portada-torneo figcaption { z-index: 1; }
     .cabecera { margin-bottom: 14px; }
     .cabecera h1 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); margin: 6px 0 4px; }
     .chip-region { font-size: 13px; color: var(--blue); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; vertical-align: middle; margin-left: 8px; }

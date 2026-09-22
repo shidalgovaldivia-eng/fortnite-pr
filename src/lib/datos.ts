@@ -11,6 +11,19 @@ import indice from '../data/rondas.json';
 import calendario from '../data/calendario.json';
 import meta from '../data/meta.json';
 import jugadores from '../data/jugadores.json';
+import imagenes from '../data/imagenes.json';
+
+/** Portadas genericas de reserva, cuando una serie todavia no tiene su imagen propia. */
+export const IMAGENES_GENERICAS = [
+  'tournament-victory.png',
+  'tournament-contenders.png',
+  'tournament-global.png',
+  'tournament-elite.png',
+  'tournament-reload.png',
+];
+
+/** Portada real de una serie (la que publica Fortnite Tracker), o '' si no la tenemos. */
+export const imagenDe = (serie: string): string => (imagenes as Record<string, string>)[serie] ?? '';
 
 export interface Ronda {
   slug: string;

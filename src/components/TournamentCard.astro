@@ -2,12 +2,15 @@
 import type { Tournament } from '../data';
 const { tournament } = Astro.props as { tournament: Tournament };
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const enCurso = tournament.status.startsWith('En curso');
+const finalizada = tournament.status.startsWith('Finalizada');
 ---
 <article class="tournament-card" data-region={tournament.region} data-name={tournament.name.toLowerCase()}>
   <a href={`${base}torneos/${tournament.slug}/`} aria-label={`Abrir ${tournament.name}`}>
     <img src={`${base}assets/${tournament.image}`} alt="" loading="lazy" />
     <div class="tournament-card__shade"></div>
-    {tournament.status === 'En curso' && <span class="live-badge">En curso</span>}
+    {enCurso && <span class="live-badge">En curso</span>}
+    {finalizada && <span class="live-badge done-badge">Finalizada</span>}
     <div class="tournament-card__body">
       <h3>{tournament.shortName}</h3>
       <p>{tournament.region} <span></span> {tournament.format}</p>
@@ -15,3 +18,9 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     </div>
   </a>
 </article>
+
+<style>
+  /* El badge "Finalizada" no existia: solo habia "En curso", asi que un torneo ya jugado no decia
+     nada. Ahora cada tarjeta declara su estado real (calculado con los standings recolectados). */
+  .done-badge { color: var(--muted); background: #050914cc; border: 1px solid var(--line); }
+</style>
