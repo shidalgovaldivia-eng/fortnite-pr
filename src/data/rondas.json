@@ -1280,6 +1280,22 @@
   "conPromedioElims": 1932
  },
  {
+  "slug": "naw-s42-solovictorycup-s42-solovictorycup-event2round1-naw",
+  "archivo": "naw-s42-solovictorycup-s42-solovictorycup-event2round1-naw.json",
+  "serie": "S42_SoloVictoryCup",
+  "region": "NAW",
+  "ronda": "S42_SoloVictoryCup_Event2Round1_NAW",
+  "etiqueta": "Event 2 Round 1 9/13/2026 10:00 PM - 12:00 AM",
+  "titulo": "Event 2 Round 1 9/13/2026 10:00 PM - 12:00 AM",
+  "fecha": "2026-09-13T22:00:00.000Z",
+  "etiquetaFecha": "2026-09-13",
+  "fuente": "fortnite-tracker",
+  "jugadores": 9998,
+  "paginas": 100,
+  "conElims": 0,
+  "conPromedioElims": 9998
+ },
+ {
   "slug": "br-s42-solovictorycup-s42-solovictorycup-event2round2-br",
   "archivo": "br-s42-solovictorycup-s42-solovictorycup-event2round2-br.json",
   "serie": "S42_SoloVictoryCup",
@@ -1408,6 +1424,22 @@
   "conPromedioElims": 774
  },
  {
+  "slug": "oce-s42-solovictorycup-s42-solovictorycup-event2round2-oce",
+  "archivo": "oce-s42-solovictorycup-s42-solovictorycup-event2round2-oce.json",
+  "serie": "S42_SoloVictoryCup",
+  "region": "OCE",
+  "ronda": "S42_SoloVictoryCup_Event2Round2_OCE",
+  "etiqueta": "Event 2 Round 2 9/13/2026 08:00 AM - 09:00 AM",
+  "titulo": "Event 2 Round 2 9/13/2026 08:00 AM - 09:00 AM",
+  "fecha": "2026-09-13T08:00:00.000Z",
+  "etiquetaFecha": "2026-09-13",
+  "fuente": "fortnite-tracker",
+  "jugadores": 776,
+  "paginas": 8,
+  "conElims": 0,
+  "conPromedioElims": 776
+ },
+ {
   "slug": "asia-s42-solovictorycup-s42-solovictorycup-event2round1-asia",
   "archivo": "asia-s42-solovictorycup-s42-solovictorycup-event2round1-asia.json",
   "serie": "S42_SoloVictoryCup",
@@ -1424,6 +1456,22 @@
   "conPromedioElims": 9999
  },
  {
+  "slug": "oce-s42-solovictorycup-s42-solovictorycup-event2round1-oce",
+  "archivo": "oce-s42-solovictorycup-s42-solovictorycup-event2round1-oce.json",
+  "serie": "S42_SoloVictoryCup",
+  "region": "OCE",
+  "ronda": "S42_SoloVictoryCup_Event2Round1_OCE",
+  "etiqueta": "Event 2 Round 1 9/13/2026 05:00 AM - 07:00 AM",
+  "titulo": "Event 2 Round 1 9/13/2026 05:00 AM - 07:00 AM",
+  "fecha": "2026-09-13T05:00:00.000Z",
+  "etiquetaFecha": "2026-09-13",
+  "fuente": "fortnite-tracker",
+  "jugadores": 6736,
+  "paginas": 68,
+  "conElims": 0,
+  "conPromedioElims": 6736
+ },
+ {
   "slug": "naw-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round2-naw",
   "archivo": "naw-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round2-naw.json",
   "serie": "S42_ConsoleVCC_SolosZB",
@@ -1438,6 +1486,54 @@
   "paginas": 10,
   "conElims": 0,
   "conPromedioElims": 911
+ },
+ {
+  "slug": "br-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round1-br",
+  "archivo": "br-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round1-br.json",
+  "serie": "S42_ConsoleVCC_SolosZB",
+  "region": "BR",
+  "ronda": "S42_ConsoleVCC_SolosZB_Event3Round1_BR",
+  "etiqueta": "Event 3 Round 1 9/12/2026 06:00 PM - 08:00 PM",
+  "titulo": "Event 3 Round 1 9/12/2026 06:00 PM - 08:00 PM",
+  "fecha": "2026-09-12T18:00:00.000Z",
+  "etiquetaFecha": "2026-09-12",
+  "fuente": "fortnite-tracker",
+  "jugadores": 10000,
+  "paginas": 100,
+  "conElims": 0,
+  "conPromedioElims": 10000
+ },
+ {
+  "slug": "asia-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round2-asia",
+  "archivo": "asia-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round2-asia.json",
+  "serie": "S42_ConsoleVCC_SolosZB",
+  "region": "ASIA",
+  "ronda": "S42_ConsoleVCC_SolosZB_Event3Round2_ASIA",
+  "etiqueta": "Event 3 Round 2 9/12/2026 09:00 AM - 10:00 AM",
+  "titulo": "Event 3 Round 2 9/12/2026 09:00 AM - 10:00 AM",
+  "fecha": "2026-09-12T09:00:00.000Z",
+  "etiquetaFecha": "2026-09-12",
+  "fuente": "fortnite-tracker",
+  "jugadores": 958,
+  "paginas": 10,
+  "conElims": 0,
+  "conPromedioElims": 958
+ },
+ {
+  "slug": "asia-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round1-asia",
+  "archivo": "asia-s42-consolevcc-soloszb-s42-consolevcc-soloszb-event3round1-asia.json",
+  "serie": "S42_ConsoleVCC_SolosZB",
+  "region": "ASIA",
+  "ronda": "S42_ConsoleVCC_SolosZB_Event3Round1_ASIA",
+  "etiqueta": "Event 3 Round 1 9/12/2026 06:00 AM - 08:00 AM",
+  "titulo": "Event 3 Round 1 9/12/2026 06:00 AM - 08:00 AM",
+  "fecha": "2026-09-12T06:00:00.000Z",
+  "etiquetaFecha": "2026-09-12",
+  "fuente": "fortnite-tracker",
+  "jugadores": 8650,
+  "paginas": 87,
+  "conElims": 0,
+  "conPromedioElims": 8650
  },
  {
   "slug": "eu-s42-solovictorycup-s42-solovictorycup-event3round1-eu",
