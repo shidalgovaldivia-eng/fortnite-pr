@@ -1,71 +1,5 @@
 [
  {
-  "evento": "FNCS Solos Qualifiers in Middle East: Day 1 Day 1 Round 1",
-  "eventoId": "epicgames_S42_FNCSSoloQualifiers_ME",
-  "region": "ME",
-  "serie": "S42_FNCSSoloQualifiers",
-  "ronda": "S42_FNCSSoloQualifiers_Qual2Round1Day2_ME",
-  "etiqueta": "Day 2 Round 1 10/6/2026 12:00 PM - 03:00 PM",
-  "fecha": "2026-10-06T12:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 0
- },
- {
-  "evento": "Solo Reload Ranked Cup (Battle Royale) in Middle East: Event 4",
-  "eventoId": "epicgames_S42_RankedCupSoloReload_ME",
-  "region": "ME",
-  "serie": "S42_RankedCupSoloReload",
-  "ronda": "S42_RankedCupSoloReload_Event6_ME",
-  "etiqueta": "Event 6 10/6/2026 12:00 PM - 03:00 PM",
-  "fecha": "2026-10-06T12:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 0
- },
- {
-  "evento": "Solo Reload Ranked Cup (Zero Build) in Middle East: Event 4",
-  "eventoId": "epicgames_S42_RankedCupSoloReload_ZB_ME",
-  "region": "ME",
-  "serie": "S42_RankedCupSoloReload_ZB",
-  "ronda": "S42_RankedCupSoloReload_ZB_Event6_ME",
-  "etiqueta": "Event 6 10/6/2026 12:00 PM - 03:00 PM",
-  "fecha": "2026-10-06T12:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 0
- },
- {
-  "evento": "FNCS Solos Qualifiers in Europe: Day 1 Day 1 Round 1",
-  "eventoId": "epicgames_S42_FNCSSoloQualifiers_EU",
-  "region": "EU",
-  "serie": "S42_FNCSSoloQualifiers",
-  "ronda": "S42_FNCSSoloQualifiers_Qual2Round1Day2_EU",
-  "etiqueta": "Day 2 Round 1 10/6/2026 02:00 PM - 05:00 PM",
-  "fecha": "2026-10-06T14:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 2
- },
- {
-  "evento": "Solo Reload Ranked Cup (Battle Royale) in Europe: Event 4",
-  "eventoId": "epicgames_S42_RankedCupSoloReload_EU",
-  "region": "EU",
-  "serie": "S42_RankedCupSoloReload",
-  "ronda": "S42_RankedCupSoloReload_Event6_EU",
-  "etiqueta": "Event 6 10/6/2026 02:00 PM - 05:00 PM",
-  "fecha": "2026-10-06T14:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 2
- },
- {
-  "evento": "Solo Reload Ranked Cup (Zero Build) in Europe: Event 4",
-  "eventoId": "epicgames_S42_RankedCupSoloReload_ZB_EU",
-  "region": "EU",
-  "serie": "S42_RankedCupSoloReload_ZB",
-  "ronda": "S42_RankedCupSoloReload_ZB_Event6_EU",
-  "etiqueta": "Event 6 10/6/2026 02:00 PM - 05:00 PM",
-  "fecha": "2026-10-06T14:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 2
- },
- {
   "evento": "FNCS Solos Qualifiers in Brazil: Day 1 Day 1 Round 1",
   "eventoId": "epicgames_S42_FNCSSoloQualifiers_BR",
   "region": "BR",
@@ -74,7 +8,7 @@
   "etiqueta": "Day 2 Round 1 10/6/2026 06:00 PM - 09:00 PM",
   "fecha": "2026-10-06T18:00:00.000Z",
   "enDias": 0,
-  "enHoras": 6
+  "enHoras": 2
  },
  {
   "evento": "Solo Reload Ranked Cup (Battle Royale) in Brazil: Event 4",
@@ -85,7 +19,7 @@
   "etiqueta": "Event 6 10/6/2026 06:00 PM - 09:00 PM",
   "fecha": "2026-10-06T18:00:00.000Z",
   "enDias": 0,
-  "enHoras": 6
+  "enHoras": 2
  },
  {
   "evento": "Solo Reload Ranked Cup (Zero Build) in Brazil: Event 4",
@@ -96,7 +30,7 @@
   "etiqueta": "Event 6 10/6/2026 06:00 PM - 09:00 PM",
   "fecha": "2026-10-06T18:00:00.000Z",
   "enDias": 0,
-  "enHoras": 6
+  "enHoras": 2
  },
  {
   "evento": "[NAC] FNCS Solos Qualifiers in NA Central: Day 1 Day 1 Round 1",
@@ -107,7 +41,7 @@
   "etiqueta": "Day 2 Round 1 10/6/2026 08:00 PM - 11:00 PM",
   "fecha": "2026-10-06T20:00:00.000Z",
   "enDias": 0,
-  "enHoras": 8
+  "enHoras": 4
  },
  {
   "evento": "[NAC] Solo Reload Ranked Cup (Battle Royale) in NA Central: Event 4",
@@ -118,7 +52,7 @@
   "etiqueta": "Event 6 10/6/2026 08:00 PM - 11:00 PM",
   "fecha": "2026-10-06T20:00:00.000Z",
   "enDias": 0,
-  "enHoras": 8
+  "enHoras": 4
  },
  {
   "evento": "[NAC] Solo Reload Ranked Cup (Zero Build) in NA Central: Event 4",
@@ -129,7 +63,7 @@
   "etiqueta": "Event 6 10/6/2026 08:00 PM - 11:00 PM",
   "fecha": "2026-10-06T20:00:00.000Z",
   "enDias": 0,
-  "enHoras": 8
+  "enHoras": 4
  },
  {
   "evento": "FNCS Solos Qualifiers in NA West: Day 1 Day 1 Round 1",
@@ -140,7 +74,7 @@
   "etiqueta": "Day 2 Round 1 10/6/2026 10:00 PM - 01:00 AM",
   "fecha": "2026-10-06T22:00:00.000Z",
   "enDias": 0,
-  "enHoras": 10
+  "enHoras": 6
  },
  {
   "evento": "Solo Reload Ranked Cup (Battle Royale) in NA West: Event 4",
@@ -151,7 +85,7 @@
   "etiqueta": "Event 6 10/6/2026 10:00 PM - 01:00 AM",
   "fecha": "2026-10-06T22:00:00.000Z",
   "enDias": 0,
-  "enHoras": 10
+  "enHoras": 6
  },
  {
   "evento": "Solo Reload Ranked Cup (Zero Build) in NA West: Event 4",
@@ -162,7 +96,7 @@
   "etiqueta": "Event 6 10/6/2026 10:00 PM - 01:00 AM",
   "fecha": "2026-10-06T22:00:00.000Z",
   "enDias": 0,
-  "enHoras": 10
+  "enHoras": 6
  },
  {
   "evento": "Fortnite Performance Evaluation in Europe: Event 5 Event 5 Round 1",
@@ -173,7 +107,7 @@
   "etiqueta": "Event 7 Round 1 10/8/2026 01:00 PM - 03:00 PM",
   "fecha": "2026-10-08T13:00:00.000Z",
   "enDias": 2,
-  "enHoras": 49
+  "enHoras": 45
  },
  {
   "evento": "Fortnite Performance Evaluation in Europe: Event 5 Event 5 Round 1",
@@ -184,7 +118,7 @@
   "etiqueta": "Event 7 Round 2 10/8/2026 04:00 PM - 06:00 PM",
   "fecha": "2026-10-08T16:00:00.000Z",
   "enDias": 2,
-  "enHoras": 52
+  "enHoras": 48
  },
  {
   "evento": "Fortnite Performance Evaluation in NA Central: Event 5 Event 5 Round 1",
@@ -195,7 +129,7 @@
   "etiqueta": "Event 7 Round 1 10/8/2026 08:00 PM - 10:00 PM",
   "fecha": "2026-10-08T20:00:00.000Z",
   "enDias": 2,
-  "enHoras": 56
+  "enHoras": 52
  },
  {
   "evento": "Fortnite Performance Evaluation in NA Central: Event 5 Event 5 Round 1",
@@ -206,7 +140,7 @@
   "etiqueta": "Event 7 Round 2 10/8/2026 11:00 PM - 01:00 AM",
   "fecha": "2026-10-08T23:00:00.000Z",
   "enDias": 2,
-  "enHoras": 59
+  "enHoras": 55
  },
  {
   "evento": "Solo Reload Victory Cup in Oceania: Event 1 Event 1 Round 1",
@@ -217,7 +151,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 04:00 AM - 06:00 AM",
   "fecha": "2026-10-09T04:00:00.000Z",
   "enDias": 3,
-  "enHoras": 64
+  "enHoras": 60
  },
  {
   "evento": "Solo Reload Victory Cup in Asia: Event 1 Event 1 Round 1",
@@ -228,7 +162,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 06:00 AM - 08:00 AM",
   "fecha": "2026-10-09T06:00:00.000Z",
   "enDias": 3,
-  "enHoras": 66
+  "enHoras": 62
  },
  {
   "evento": "Solo Reload Victory Cup in Oceania: Event 1 Event 1 Round 1",
@@ -239,7 +173,7 @@
   "etiqueta": "Event 2 Round 2 10/9/2026 07:00 AM - 07:45 AM",
   "fecha": "2026-10-09T07:00:00.000Z",
   "enDias": 3,
-  "enHoras": 67
+  "enHoras": 63
  },
  {
   "evento": "Solo Reload Victory Cup in Asia: Event 1 Event 1 Round 1",
@@ -250,7 +184,7 @@
   "etiqueta": "Event 2 Round 2 10/9/2026 09:00 AM - 09:45 AM",
   "fecha": "2026-10-09T09:00:00.000Z",
   "enDias": 3,
-  "enHoras": 69
+  "enHoras": 65
  },
  {
   "evento": "Solo Reload Victory Cup in Middle East: Event 1 Event 1 Round 1",
@@ -261,7 +195,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 12:00 PM - 02:00 PM",
   "fecha": "2026-10-09T12:00:00.000Z",
   "enDias": 3,
-  "enHoras": 72
+  "enHoras": 68
  },
  {
   "evento": "Solo Reload Victory Cup in Europe: Event 1 Event 1 Round 1",
@@ -272,7 +206,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 02:00 PM - 04:00 PM",
   "fecha": "2026-10-09T14:00:00.000Z",
   "enDias": 3,
-  "enHoras": 74
+  "enHoras": 70
  },
  {
   "evento": "Solo Reload Victory Cup in Middle East: Event 1 Event 1 Round 1",
@@ -283,7 +217,7 @@
   "etiqueta": "Event 2 Round 2 10/9/2026 03:00 PM - 03:45 PM",
   "fecha": "2026-10-09T15:00:00.000Z",
   "enDias": 3,
-  "enHoras": 75
+  "enHoras": 71
  },
  {
   "evento": "Solo Reload Victory Cup in Europe: Event 1 Event 1 Round 1",
@@ -294,7 +228,7 @@
   "etiqueta": "Event 2 Round 2 10/9/2026 05:00 PM - 05:45 PM",
   "fecha": "2026-10-09T17:00:00.000Z",
   "enDias": 3,
-  "enHoras": 77
+  "enHoras": 73
  },
  {
   "evento": "Solo Reload Victory Cup in Brazil: Event 1 Event 1 Round 1",
@@ -305,7 +239,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 06:00 PM - 08:00 PM",
   "fecha": "2026-10-09T18:00:00.000Z",
   "enDias": 3,
-  "enHoras": 78
+  "enHoras": 74
  },
  {
   "evento": "Solo Reload Victory Cup in NA Central: Event 1 Event 1 Round 1",
@@ -316,7 +250,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 08:00 PM - 10:00 PM",
   "fecha": "2026-10-09T20:00:00.000Z",
   "enDias": 3,
-  "enHoras": 80
+  "enHoras": 76
  },
  {
   "evento": "Solo Reload Victory Cup in Brazil: Event 1 Event 1 Round 1",
@@ -327,7 +261,7 @@
   "etiqueta": "Event 2 Round 2 10/9/2026 09:00 PM - 09:45 PM",
   "fecha": "2026-10-09T21:00:00.000Z",
   "enDias": 3,
-  "enHoras": 81
+  "enHoras": 77
  },
  {
   "evento": "Solo Reload Victory Cup in NA West: Event 1 Event 1 Round 1",
@@ -338,7 +272,7 @@
   "etiqueta": "Event 2 Round 1 10/9/2026 10:00 PM - 12:00 AM",
   "fecha": "2026-10-09T22:00:00.000Z",
   "enDias": 3,
-  "enHoras": 82
+  "enHoras": 78
  },
  {
   "evento": "Solo Reload Victory Cup in NA Central: Event 1 Event 1 Round 1",
@@ -349,7 +283,7 @@
   "etiqueta": "Event 2 Round 2 10/9/2026 11:00 PM - 11:45 PM",
   "fecha": "2026-10-09T23:00:00.000Z",
   "enDias": 3,
-  "enHoras": 83
+  "enHoras": 79
  },
  {
   "evento": "Solo Reload Victory Cup in NA West: Event 1 Event 1 Round 1",
@@ -359,8 +293,8 @@
   "ronda": "S42_ReloadSoloVictoryCup_Event2_Round2_NAW",
   "etiqueta": "Event 2 Round 2 10/10/2026 01:00 AM - 01:45 AM",
   "fecha": "2026-10-10T01:00:00.000Z",
-  "enDias": 4,
-  "enHoras": 85
+  "enDias": 3,
+  "enHoras": 81
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Oceania: Event 1 Event 1 Round 2",
@@ -370,8 +304,8 @@
   "ronda": "S42_MobileVictoryCup_Event4_Round1_OCE",
   "etiqueta": "Event 4 Round 1 10/10/2026 03:00 AM - 04:15 AM",
   "fecha": "2026-10-10T03:00:00.000Z",
-  "enDias": 4,
-  "enHoras": 87
+  "enDias": 3,
+  "enHoras": 83
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Oceania: Event 4 Event 4 Round 2",
@@ -382,7 +316,7 @@
   "etiqueta": "Event 6 Round 1 10/10/2026 04:00 AM - 06:00 AM",
   "fecha": "2026-10-10T04:00:00.000Z",
   "enDias": 4,
-  "enHoras": 88
+  "enHoras": 84
  },
  {
   "evento": "FNCS Solos Qualifiers in Oceania: Day 1 Day 1 Round 1",
@@ -393,7 +327,7 @@
   "etiqueta": "Round 2 10/10/2026 04:00 AM - 07:00 AM",
   "fecha": "2026-10-10T04:00:00.000Z",
   "enDias": 4,
-  "enHoras": 88
+  "enHoras": 84
  },
  {
   "evento": "Duos Ranked Cup (Battle Royale) in Oceania: Event 4",
@@ -404,7 +338,7 @@
   "etiqueta": "Event 6 10/10/2026 04:00 AM - 07:00 AM",
   "fecha": "2026-10-10T04:00:00.000Z",
   "enDias": 4,
-  "enHoras": 88
+  "enHoras": 84
  },
  {
   "evento": "epicgames_S42_RankedCupDuos_ZB_OCE",
@@ -415,7 +349,7 @@
   "etiqueta": "Event 6 10/10/2026 04:00 AM - 07:00 AM",
   "fecha": "2026-10-10T04:00:00.000Z",
   "enDias": 4,
-  "enHoras": 88
+  "enHoras": 84
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Asia: Event 1 Event 1 Round 2",
@@ -426,7 +360,7 @@
   "etiqueta": "Event 4 Round 1 10/10/2026 05:00 AM - 06:15 AM",
   "fecha": "2026-10-10T05:00:00.000Z",
   "enDias": 4,
-  "enHoras": 89
+  "enHoras": 85
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Oceania: Event 1 Event 1 Round 2",
@@ -437,6 +371,72 @@
   "etiqueta": "Event 4 Round 2 10/10/2026 05:00 AM - 06:10 AM",
   "fecha": "2026-10-10T05:00:00.000Z",
   "enDias": 4,
-  "enHoras": 89
+  "enHoras": 85
+ },
+ {
+  "evento": "Console Zero Build Solo Victory Cup in Asia: Event 4 Event 4 Round 2",
+  "eventoId": "epicgames_S42_ConsoleVCC_SolosZB_ASIA",
+  "region": "ASIA",
+  "serie": "S42_ConsoleVCC_SolosZB",
+  "ronda": "S42_ConsoleVCC_SolosZB_Event6Round1_ASIA",
+  "etiqueta": "Event 6 Round 1 10/10/2026 06:00 AM - 08:00 AM",
+  "fecha": "2026-10-10T06:00:00.000Z",
+  "enDias": 4,
+  "enHoras": 86
+ },
+ {
+  "evento": "FNCS Solos Qualifiers in Asia: Day 1 Day 1 Round 1",
+  "eventoId": "epicgames_S42_FNCSSoloQualifiers_ASIA",
+  "region": "ASIA",
+  "serie": "S42_FNCSSoloQualifiers",
+  "ronda": "S42_FNCSSoloQualifiers_Qual2Round2_ASIA",
+  "etiqueta": "Round 2 10/10/2026 06:00 AM - 09:00 AM",
+  "fecha": "2026-10-10T06:00:00.000Z",
+  "enDias": 4,
+  "enHoras": 86
+ },
+ {
+  "evento": "Duos Ranked Cup (Battle Royale) in Asia: Event 4",
+  "eventoId": "epicgames_S42_RankedCupDuos_ASIA",
+  "region": "ASIA",
+  "serie": "S42_RankedCupDuos",
+  "ronda": "S42_RankedCupDuos_Event6_ASIA",
+  "etiqueta": "Event 6 10/10/2026 06:00 AM - 09:00 AM",
+  "fecha": "2026-10-10T06:00:00.000Z",
+  "enDias": 4,
+  "enHoras": 86
+ },
+ {
+  "evento": "Duos Ranked Cup (Zero Build) in Asia: Event 4",
+  "eventoId": "epicgames_S42_RankedCupDuos_ZB_ASIA",
+  "region": "ASIA",
+  "serie": "S42_RankedCupDuos_ZB",
+  "ronda": "S42_RankedCupDuos_ZB_Event6_ASIA",
+  "etiqueta": "Event 6 10/10/2026 06:00 AM - 09:00 AM",
+  "fecha": "2026-10-10T06:00:00.000Z",
+  "enDias": 4,
+  "enHoras": 86
+ },
+ {
+  "evento": "Console Zero Build Solo Victory Cup in Oceania: Event 4 Event 4 Round 2",
+  "eventoId": "epicgames_S42_ConsoleVCC_SolosZB_OCE",
+  "region": "OCE",
+  "serie": "S42_ConsoleVCC_SolosZB",
+  "ronda": "S42_ConsoleVCC_SolosZB_Event6Round2_OCE",
+  "etiqueta": "Event 6 Round 2 10/10/2026 07:00 AM - 08:00 AM",
+  "fecha": "2026-10-10T07:00:00.000Z",
+  "enDias": 4,
+  "enHoras": 87
+ },
+ {
+  "evento": "Mobile Reload (Mini Venture) Victory Cup in Asia: Event 1 Event 1 Round 2",
+  "eventoId": "epicgames_S42_MobileVictoryCup_ReloadminiV_ASIA",
+  "region": "ASIA",
+  "serie": "S42_MobileVictoryCup_ReloadminiV",
+  "ronda": "S42_MobileVictoryCup_Event4_Round2_ASIA",
+  "etiqueta": "Event 4 Round 2 10/10/2026 07:00 AM - 08:10 AM",
+  "fecha": "2026-10-10T07:00:00.000Z",
+  "enDias": 4,
+  "enHoras": 87
  }
 ]
