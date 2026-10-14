@@ -8,7 +8,7 @@
   "etiqueta": "Event 8 Round 1 10/15/2026 01:00 PM - 03:00 PM",
   "fecha": "2026-10-15T13:00:00.000Z",
   "enDias": 1,
-  "enHoras": 22
+  "enHoras": 18
  },
  {
   "evento": "Fortnite Performance Evaluation in Europe: Event 5 Event 5 Round 1",
@@ -19,7 +19,7 @@
   "etiqueta": "Event 8 Round 2 10/15/2026 04:00 PM - 06:00 PM",
   "fecha": "2026-10-15T16:00:00.000Z",
   "enDias": 1,
-  "enHoras": 25
+  "enHoras": 21
  },
  {
   "evento": "Fortnite Performance Evaluation in NA Central: Event 5 Event 5 Round 1",
@@ -30,7 +30,7 @@
   "etiqueta": "Event 8 Round 1 10/15/2026 08:00 PM - 10:00 PM",
   "fecha": "2026-10-15T20:00:00.000Z",
   "enDias": 1,
-  "enHoras": 29
+  "enHoras": 25
  },
  {
   "evento": "Fortnite Performance Evaluation in NA Central: Event 5 Event 5 Round 1",
@@ -41,7 +41,7 @@
   "etiqueta": "Event 8 Round 2 10/15/2026 11:00 PM - 01:00 AM",
   "fecha": "2026-10-15T23:00:00.000Z",
   "enDias": 1,
-  "enHoras": 32
+  "enHoras": 28
  },
  {
   "evento": "Solo Reload Victory Cup in Oceania: Event 1 Event 1 Round 1",
@@ -51,8 +51,8 @@
   "ronda": "S42_ReloadSoloVictoryCup_Event3_Round1_OCE",
   "etiqueta": "Event 3 Round 1 10/16/2026 04:00 AM - 06:00 AM",
   "fecha": "2026-10-16T04:00:00.000Z",
-  "enDias": 2,
-  "enHoras": 37
+  "enDias": 1,
+  "enHoras": 33
  },
  {
   "evento": "Solo Reload Victory Cup in Asia: Event 1 Event 1 Round 1",
@@ -62,8 +62,8 @@
   "ronda": "S42_ReloadSoloVictoryCup_Event3_Round1_ASIA",
   "etiqueta": "Event 3 Round 1 10/16/2026 06:00 AM - 08:00 AM",
   "fecha": "2026-10-16T06:00:00.000Z",
-  "enDias": 2,
-  "enHoras": 39
+  "enDias": 1,
+  "enHoras": 35
  },
  {
   "evento": "Solo Reload Victory Cup in Oceania: Event 1 Event 1 Round 1",
@@ -73,8 +73,8 @@
   "ronda": "S42_ReloadSoloVictoryCup_Event3_Round2_OCE",
   "etiqueta": "Event 3 Round 2 10/16/2026 07:00 AM - 07:45 AM",
   "fecha": "2026-10-16T07:00:00.000Z",
-  "enDias": 2,
-  "enHoras": 40
+  "enDias": 1,
+  "enHoras": 36
  },
  {
   "evento": "Solo Reload Victory Cup in Asia: Event 1 Event 1 Round 1",
@@ -85,7 +85,7 @@
   "etiqueta": "Event 3 Round 2 10/16/2026 09:00 AM - 09:45 AM",
   "fecha": "2026-10-16T09:00:00.000Z",
   "enDias": 2,
-  "enHoras": 42
+  "enHoras": 38
  },
  {
   "evento": "Solo Reload Victory Cup in Middle East: Event 1 Event 1 Round 1",
@@ -96,7 +96,7 @@
   "etiqueta": "Event 3 Round 1 10/16/2026 12:00 PM - 02:00 PM",
   "fecha": "2026-10-16T12:00:00.000Z",
   "enDias": 2,
-  "enHoras": 45
+  "enHoras": 41
  },
  {
   "evento": "Solo Reload Victory Cup in Europe: Event 1 Event 1 Round 1",
@@ -107,7 +107,7 @@
   "etiqueta": "Event 3 Round 1 10/16/2026 02:00 PM - 04:00 PM",
   "fecha": "2026-10-16T14:00:00.000Z",
   "enDias": 2,
-  "enHoras": 47
+  "enHoras": 43
  },
  {
   "evento": "Solo Reload Victory Cup in Middle East: Event 1 Event 1 Round 1",
@@ -118,7 +118,7 @@
   "etiqueta": "Event 3 Round 2 10/16/2026 03:00 PM - 03:45 PM",
   "fecha": "2026-10-16T15:00:00.000Z",
   "enDias": 2,
-  "enHoras": 48
+  "enHoras": 44
  },
  {
   "evento": "Solo Reload Victory Cup in Europe: Event 1 Event 1 Round 1",
@@ -129,7 +129,7 @@
   "etiqueta": "Event 3 Round 2 10/16/2026 05:00 PM - 05:45 PM",
   "fecha": "2026-10-16T17:00:00.000Z",
   "enDias": 2,
-  "enHoras": 50
+  "enHoras": 46
  },
  {
   "evento": "Solo Reload Victory Cup in Brazil: Event 1 Event 1 Round 1",
@@ -140,7 +140,7 @@
   "etiqueta": "Event 3 Round 1 10/16/2026 06:00 PM - 08:00 PM",
   "fecha": "2026-10-16T18:00:00.000Z",
   "enDias": 2,
-  "enHoras": 51
+  "enHoras": 47
  },
  {
   "evento": "Solo Reload Victory Cup in NA Central: Event 1 Event 1 Round 1",
@@ -151,7 +151,7 @@
   "etiqueta": "Event 3 Round 1 10/16/2026 08:00 PM - 10:00 PM",
   "fecha": "2026-10-16T20:00:00.000Z",
   "enDias": 2,
-  "enHoras": 53
+  "enHoras": 49
  },
  {
   "evento": "Solo Reload Victory Cup in Brazil: Event 1 Event 1 Round 1",
@@ -162,7 +162,7 @@
   "etiqueta": "Event 3 Round 2 10/16/2026 09:00 PM - 09:45 PM",
   "fecha": "2026-10-16T21:00:00.000Z",
   "enDias": 2,
-  "enHoras": 54
+  "enHoras": 50
  },
  {
   "evento": "Solo Reload Victory Cup in NA West: Event 1 Event 1 Round 1",
@@ -173,7 +173,7 @@
   "etiqueta": "Event 3 Round 1 10/16/2026 10:00 PM - 12:00 AM",
   "fecha": "2026-10-16T22:00:00.000Z",
   "enDias": 2,
-  "enHoras": 55
+  "enHoras": 51
  },
  {
   "evento": "Solo Reload Victory Cup in NA Central: Event 1 Event 1 Round 1",
@@ -184,7 +184,7 @@
   "etiqueta": "Event 3 Round 2 10/16/2026 11:00 PM - 11:45 PM",
   "fecha": "2026-10-16T23:00:00.000Z",
   "enDias": 2,
-  "enHoras": 56
+  "enHoras": 52
  },
  {
   "evento": "Solo Reload Victory Cup in NA West: Event 1 Event 1 Round 1",
@@ -195,7 +195,7 @@
   "etiqueta": "Event 3 Round 2 10/17/2026 01:00 AM - 01:45 AM",
   "fecha": "2026-10-17T01:00:00.000Z",
   "enDias": 2,
-  "enHoras": 58
+  "enHoras": 54
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Oceania: Event 1 Event 1 Round 2",
@@ -206,7 +206,7 @@
   "etiqueta": "Event 5 Round 1 10/17/2026 03:00 AM - 04:15 AM",
   "fecha": "2026-10-17T03:00:00.000Z",
   "enDias": 2,
-  "enHoras": 60
+  "enHoras": 56
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Oceania: Event 4 Event 4 Round 2",
@@ -216,8 +216,8 @@
   "ronda": "S42_ConsoleVCC_SolosZB_Event7Round1_OCE",
   "etiqueta": "Event 7 Round 1 10/17/2026 04:00 AM - 06:00 AM",
   "fecha": "2026-10-17T04:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 61
+  "enDias": 2,
+  "enHoras": 57
  },
  {
   "evento": "Duos Ranked Cup (Battle Royale) in Oceania: Event 4",
@@ -227,8 +227,8 @@
   "ronda": "S42_RankedCupDuos_Event7_OCE",
   "etiqueta": "Event 7 10/17/2026 04:00 AM - 07:00 AM",
   "fecha": "2026-10-17T04:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 61
+  "enDias": 2,
+  "enHoras": 57
  },
  {
   "evento": "epicgames_S42_RankedCupDuos_ZB_OCE",
@@ -238,8 +238,8 @@
   "ronda": "S42_RankedCupDuos_ZB_Event7_OCE",
   "etiqueta": "Event 7 10/17/2026 04:00 AM - 07:00 AM",
   "fecha": "2026-10-17T04:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 61
+  "enDias": 2,
+  "enHoras": 57
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Asia: Event 1 Event 1 Round 2",
@@ -249,8 +249,8 @@
   "ronda": "S42_MobileVictoryCup_Event5_Round1_ASIA",
   "etiqueta": "Event 5 Round 1 10/17/2026 05:00 AM - 06:15 AM",
   "fecha": "2026-10-17T05:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 62
+  "enDias": 2,
+  "enHoras": 58
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Oceania: Event 1 Event 1 Round 2",
@@ -260,8 +260,8 @@
   "ronda": "S42_MobileVictoryCup_Event5_Round2_OCE",
   "etiqueta": "Event 5 Round 2 10/17/2026 05:00 AM - 06:10 AM",
   "fecha": "2026-10-17T05:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 62
+  "enDias": 2,
+  "enHoras": 58
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Asia: Event 4 Event 4 Round 2",
@@ -271,8 +271,8 @@
   "ronda": "S42_ConsoleVCC_SolosZB_Event7Round1_ASIA",
   "etiqueta": "Event 7 Round 1 10/17/2026 06:00 AM - 08:00 AM",
   "fecha": "2026-10-17T06:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 63
+  "enDias": 2,
+  "enHoras": 59
  },
  {
   "evento": "Duos Ranked Cup (Battle Royale) in Asia: Event 4",
@@ -282,8 +282,8 @@
   "ronda": "S42_RankedCupDuos_Event7_ASIA",
   "etiqueta": "Event 7 10/17/2026 06:00 AM - 09:00 AM",
   "fecha": "2026-10-17T06:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 63
+  "enDias": 2,
+  "enHoras": 59
  },
  {
   "evento": "Duos Ranked Cup (Zero Build) in Asia: Event 4",
@@ -293,8 +293,8 @@
   "ronda": "S42_RankedCupDuos_ZB_Event7_ASIA",
   "etiqueta": "Event 7 10/17/2026 06:00 AM - 09:00 AM",
   "fecha": "2026-10-17T06:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 63
+  "enDias": 2,
+  "enHoras": 59
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Oceania: Event 4 Event 4 Round 2",
@@ -304,8 +304,8 @@
   "ronda": "S42_ConsoleVCC_SolosZB_Event7Round2_OCE",
   "etiqueta": "Event 7 Round 2 10/17/2026 07:00 AM - 08:00 AM",
   "fecha": "2026-10-17T07:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 64
+  "enDias": 2,
+  "enHoras": 60
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Asia: Event 1 Event 1 Round 2",
@@ -315,8 +315,8 @@
   "ronda": "S42_MobileVictoryCup_Event5_Round2_ASIA",
   "etiqueta": "Event 5 Round 2 10/17/2026 07:00 AM - 08:10 AM",
   "fecha": "2026-10-17T07:00:00.000Z",
-  "enDias": 3,
-  "enHoras": 64
+  "enDias": 2,
+  "enHoras": 60
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Asia: Event 4 Event 4 Round 2",
@@ -327,7 +327,7 @@
   "etiqueta": "Event 7 Round 2 10/17/2026 09:00 AM - 10:00 AM",
   "fecha": "2026-10-17T09:00:00.000Z",
   "enDias": 3,
-  "enHoras": 66
+  "enHoras": 62
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Middle East: Event 1 Event 1 Round 2",
@@ -338,7 +338,7 @@
   "etiqueta": "Event 5 Round 1 10/17/2026 11:00 AM - 12:15 PM",
   "fecha": "2026-10-17T11:00:00.000Z",
   "enDias": 3,
-  "enHoras": 68
+  "enHoras": 64
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Middle East: Event 4 Event 4 Round 2",
@@ -349,7 +349,7 @@
   "etiqueta": "Event 7 Round 1 10/17/2026 12:00 PM - 02:00 PM",
   "fecha": "2026-10-17T12:00:00.000Z",
   "enDias": 3,
-  "enHoras": 69
+  "enHoras": 65
  },
  {
   "evento": "Duos Ranked Cup (Battle Royale) in Middle East: Event 4",
@@ -360,7 +360,7 @@
   "etiqueta": "Event 7 10/17/2026 12:00 PM - 03:00 PM",
   "fecha": "2026-10-17T12:00:00.000Z",
   "enDias": 3,
-  "enHoras": 69
+  "enHoras": 65
  },
  {
   "evento": "Duos Ranked Cup (Zero Build) in Middle East: Event 4",
@@ -371,7 +371,7 @@
   "etiqueta": "Event 7 10/17/2026 12:00 PM - 03:00 PM",
   "fecha": "2026-10-17T12:00:00.000Z",
   "enDias": 3,
-  "enHoras": 69
+  "enHoras": 65
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Europe: Event 1 Event 1 Round 2",
@@ -382,7 +382,7 @@
   "etiqueta": "Event 5 Round 1 10/17/2026 01:00 PM - 02:15 PM",
   "fecha": "2026-10-17T13:00:00.000Z",
   "enDias": 3,
-  "enHoras": 70
+  "enHoras": 66
  },
  {
   "evento": "Mobile Reload (Mini Venture) Victory Cup in Middle East: Event 1 Event 1 Round 2",
@@ -393,7 +393,7 @@
   "etiqueta": "Event 5 Round 2 10/17/2026 01:00 PM - 02:10 PM",
   "fecha": "2026-10-17T13:00:00.000Z",
   "enDias": 3,
-  "enHoras": 70
+  "enHoras": 66
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Europe: Event 4 Event 4 Round 2",
@@ -404,7 +404,7 @@
   "etiqueta": "Event 7 Round 1 10/17/2026 02:00 PM - 04:00 PM",
   "fecha": "2026-10-17T14:00:00.000Z",
   "enDias": 3,
-  "enHoras": 71
+  "enHoras": 67
  },
  {
   "evento": "Duos Ranked Cup (Battle Royale) in Europe: Event 4",
@@ -415,7 +415,7 @@
   "etiqueta": "Event 7 10/17/2026 02:00 PM - 05:00 PM",
   "fecha": "2026-10-17T14:00:00.000Z",
   "enDias": 3,
-  "enHoras": 71
+  "enHoras": 67
  },
  {
   "evento": "Duos Ranked Cup (Zero Build) in Europe: Event 4",
@@ -426,7 +426,7 @@
   "etiqueta": "Event 7 10/17/2026 02:00 PM - 05:00 PM",
   "fecha": "2026-10-17T14:00:00.000Z",
   "enDias": 3,
-  "enHoras": 71
+  "enHoras": 67
  },
  {
   "evento": "Console Zero Build Solo Victory Cup in Middle East: Event 4 Event 4 Round 2",
@@ -437,6 +437,6 @@
   "etiqueta": "Event 7 Round 2 10/17/2026 03:00 PM - 04:00 PM",
   "fecha": "2026-10-17T15:00:00.000Z",
   "enDias": 3,
-  "enHoras": 72
+  "enHoras": 68
  }
 ]
