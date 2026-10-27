@@ -1,27 +1,5 @@
 [
  {
-  "evento": "FNCS Solos Finals in Middle East: Day 1 Finals",
-  "eventoId": "epicgames_S42_FNCSSolo_Final_ME",
-  "region": "ME",
-  "serie": "S42_FNCSSolo_Final",
-  "ronda": "S42_FNCSSolo_Final_Day2_ME",
-  "etiqueta": "Day 2 Finals 10/27/2026 12:00 PM - 02:40 PM",
-  "fecha": "2026-10-27T12:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 0
- },
- {
-  "evento": "FNCS Solos Finals in Europe: Day 1 Finals",
-  "eventoId": "epicgames_S42_FNCSSolo_Final_EU",
-  "region": "EU",
-  "serie": "S42_FNCSSolo_Final",
-  "ronda": "S42_FNCSSolo_Final_Day2_EU",
-  "etiqueta": "Day 2 Finals 10/27/2026 03:00 PM - 05:40 PM",
-  "fecha": "2026-10-27T15:00:00.000Z",
-  "enDias": 0,
-  "enHoras": 3
- },
- {
   "evento": "FNCS Solos Finals in Brazil: Day 1 Finals",
   "eventoId": "epicgames_S42_FNCSSolo_Final_BR",
   "region": "BR",
@@ -30,7 +8,7 @@
   "etiqueta": "Day 2 Finals 10/27/2026 06:00 PM - 08:40 PM",
   "fecha": "2026-10-27T18:00:00.000Z",
   "enDias": 0,
-  "enHoras": 6
+  "enHoras": 2
  },
  {
   "evento": "FNCS Solos Finals in NA Central: Day 1 Finals",
@@ -41,7 +19,7 @@
   "etiqueta": "Day 2 Finals 10/27/2026 08:00 PM - 10:40 PM",
   "fecha": "2026-10-27T20:00:00.000Z",
   "enDias": 0,
-  "enHoras": 8
+  "enHoras": 4
  },
  {
   "evento": "FNCS Solos Finals in NA West: Day 1 Finals",
@@ -52,6 +30,6 @@
   "etiqueta": "Day 2 Finals 10/27/2026 10:00 PM - 12:40 AM",
   "fecha": "2026-10-27T22:00:00.000Z",
   "enDias": 0,
-  "enHoras": 10
+  "enHoras": 6
  }
 ]
